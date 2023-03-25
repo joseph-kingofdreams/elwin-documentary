@@ -1,16 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Character from "../components/Character.astro";
+import Location from "../components/Location.astro";
 ---
 
 <Layout title="Welcome to Astro.">
     <main>
         <section
-            class="w-full min-h-[720px] bg-gradient-to-t from-black flex justify-center items-center"
+            class="relative w-full aspect-video flex justify-center items-center"
         >
-            <h1 class="text-8xl text-white font-display uppercase">
-                Chasing Freedom
-            </h1>
+            <div
+                class="absolute w-full aspect-video bg-[url('https://www.giantfreakinrobot.com/wp-content/uploads/2021/10/dune-review-scaled.jpg')] bg-cover bg-center"
+            >
+                <div
+                    class="absolute h-full w-full bg-gradient-to-t from-[#F8D543] via-[#F8D543] to-[#FF6F00] mix-blend-color"
+                >
+                </div>
+                <div
+                    class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent"
+                >
+                </div>
+            </div>
+            <!-- <h1 class="text-8xl text-white font-display uppercase">
+                Chasing Freedom Test
+            </h1> -->
         </section>
         <section class="w-full min-h-[720px] p-44 bg-black text-white">
             <p class="w-[50ch] text-xl">
@@ -23,7 +36,7 @@ import Card from "../components/Card.astro";
         <section
             class="w-full min-h-[720px] h-full p-32 grid grid-cols-[1fr_auto] gap-16 items-center"
         >
-            <div class="bg-amber-600 w-96 h-full aspect-[2/3]"></div>
+            <div class="bg-orange-500 w-96 h-full aspect-[2/3]"></div>
             <div class="flex flex-col gap-4">
                 <h1>Chasing Freedom</h1>
                 <p class="grid">
@@ -51,17 +64,60 @@ import Card from "../components/Card.astro";
                 </p>
             </div>
         </section>
-        <section>
-            <h1>Cast & Characters</h1>
+        <section class="min-h-screen bg-black py-24 px-24 flex flex-col gap-20">
+            <div class="flex flex-col gap-8">
+                <h1 class="text-white">Cast & Characters</h1>
+                <div class="flex gap-9">
+                    <Character name={"Levi Coffin"} />
+                    <Character name={"Thomas Garrett"} />
+                    <Character name={"John Rankin"} />
+                    <Character name={"Laura S. Haviland"} />
+                    <Character name={"William Still"} />
+                </div>
+                <div class="flex gap-9">
+                    <Character name={"Harriet Tubman"} />
+                    <Character name={"Abraham Lincoln"} />
+                    <Character name={"Josiah Henson"} />
+                    <Character name={"John Brown"} />
+                    <Character name={"Salmon Portland Chase"} />
+                </div>
+                <div class="flex gap-9">
+                    <Character name={"Vestal Coffin"} />
+                    <Character name={"William H. Seward"} />
+                    <Character name={"Adam Lowry Rankin"} />
+                    <Character name={"Harriet Beecher Stowe"} />
+                    <Character name={"Peter Still"} />
+                </div>
+            </div>
+            <div class="flex flex-col gap-8">
+                <h1 class="text-white">Film Locations</h1>
+                <Location name={"Adrian, MI"} />
+                <Location name={"Auburn, NY"} />
+                <Location name={"Baltimore, MDin"} />
+                <div class="flex gap-9"></div>
+            </div>
         </section>
-        <section>
+        <section class="p-24">
             <h1>Production Team & Crew</h1>
         </section>
-        <section>
-            <h1>Across America</h1>
+        <section class="bg-black p-24">
+            <h1 class="text-white">Across America</h1>
         </section>
-        <section>
-            <h1>Follow Our Journey</h1>
+        <section
+            class="w-full aspect-video bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-40 flex items-center gap-24"
+        >
+            <div>
+                <h1>Follow Our Journey</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br
+                    />
+                    Curabitur fermentum, felis et tincidunt rutrum, ligula sem tincidunt
+                    mi, ac mattis diam libero quis elit. Quisque lacus odio, pellentesque
+                    id fringilla id, semper non lectus.
+                    <br /><br />
+                    elwintechnologies@gmail.com
+                </p>
+            </div>
         </section>
         <footer>elwin studios</footer>
     </main>

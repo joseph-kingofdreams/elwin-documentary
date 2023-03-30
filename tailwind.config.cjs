@@ -21,7 +21,7 @@ module.exports = {
     },
     plugins: [
         require('@tailwindcss/line-clamp'),
-        plugin(function ({ addBase, theme }) {
+        plugin(function ({ addBase, addUtilities, theme }) {
             addBase({
                 '*': {
                     boxSizing: 'border-box',
@@ -174,6 +174,24 @@ module.exports = {
                     borderRadius: '1rem',
                     margin: '0.25rem',
                 }
+            })
+            addUtilities({
+                // Scrollbar Styling
+                // .scroll: 4px Spacing to the right */
+                // .scroll-flush: flush against container wall */
+                '*::-webkit-scrollbar': {
+                    height: '1rem',
+                    width: '1rem',
+                },
+                '*::-webkit-scrollbar-thumb': {
+                    backgroundColor: theme('colors.neutral.500'),
+                    border: '0.25rem solid rgba(0, 0, 0, 0)',
+                    backgroundClip: 'padding-box',
+                    borderRadius: '1rem',
+                },
+                '*::-webkit-scrollbar-track': {
+                    backgroundColor: 'rgba(0,0,0,0)',
+                },
             })
         })
     ]

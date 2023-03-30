@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Character from "../components/Character.astro";
+import Icon from "../components/Icon.astro";
 import Location from "../components/Location.astro";
+import Team from "../components/Team.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-    <main>
+    <main class="flex flex-col max-w-[1920px] mx-auto">
         <section
             class="relative w-full aspect-video flex justify-center items-center"
         >
@@ -26,19 +28,22 @@ import Location from "../components/Location.astro";
             </h1> -->
         </section>
         <section class="w-full min-h-[720px] p-44 bg-black text-white">
-            <p class="w-[50ch] text-xl">
+            <h5 class="w-[50ch] text-2xl font-[gilroy-light] font-4xl">
                 “Where justice is denied, where poverty is enforced, where
                 ignorance prevails, and where any one class is made to feel that
                 society is an organized conspiracy to oppress, rob and degrade
                 them, neither persons nor property will be safe.”
-            </p>
+            </h5>
         </section>
         <section
-            class="w-full min-h-[720px] h-full p-32 grid grid-cols-[1fr_auto] gap-16 items-center"
+            class="w-full min-h-[720px] h-full py-32 px-24 grid grid-cols-[1fr_auto] gap-16 items-center bg-white"
         >
-            <div class="bg-orange-500 w-96 h-full aspect-[2/3]"></div>
+            <div
+                class="bg-orange-500 h-screen aspect-[2/3] rounded-md max-h-[1080px]"
+            >
+            </div>
             <div class="flex flex-col gap-4">
-                <h1>Chasing Freedom</h1>
+                <h1 class="font-display">Agents of the Underground Railroad</h1>
                 <p class="grid">
                     <span><b>Rating:</b> PG-13</span>
                     <span><b>Release Date:</b> December 21, 2023</span>
@@ -66,7 +71,7 @@ import Location from "../components/Location.astro";
         </section>
         <section class="min-h-screen bg-black py-24 px-24 flex flex-col gap-20">
             <div class="flex flex-col gap-8">
-                <h1 class="text-white">Cast & Characters</h1>
+                <h1 class="text-white font-display">Cast & Characters</h1>
                 <div class="flex gap-9">
                     <Character name={"Levi Coffin"} />
                     <Character name={"Thomas Garrett"} />
@@ -90,25 +95,59 @@ import Location from "../components/Location.astro";
                 </div>
             </div>
             <div class="flex flex-col gap-8">
-                <h1 class="text-white">Film Locations</h1>
+                <h1 class="text-white font-display">Film Locations</h1>
                 <Location name={"Adrian, MI"} />
                 <Location name={"Auburn, NY"} />
-                <Location name={"Baltimore, MDin"} />
+                <Location name={"Baltimore, MD"} />
                 <div class="flex gap-9"></div>
             </div>
         </section>
-        <section class="p-24">
-            <h1>Production Team & Crew</h1>
+        <section class="p-24 flex flex-col gap-8 bg-white">
+            <h1 class="font-display">Production Team & Crew</h1>
+            <div class="flex gap-8">
+                <Team title="Researcher" name="Jessica Li" />
+                <Team title="Director | Cinemetography" name="Joshua Li" />
+                <Team title="Writing | Research" name="Jocelyn Li" />
+                <Team title="Media | Marketing" name="Joseph Li" />
+                <Team title="Crew | Grip" name="John Li" />
+                <Team title="PR | Broadcasting" name="Jeremy Li" />
+            </div>
         </section>
-        <section class="bg-black p-24">
-            <h1 class="text-white">Across America</h1>
+        <section class="bg-black p-24 flex items-center gap-6">
+            <div class="flex flex-col gap-6">
+                <div>
+                    <h1 class="text-white font-display">Across America!</h1>
+                    <p class="text-white text-2xl font-[gilroy-regular]">
+                        June - August 2023
+                    </p>
+                </div>
+                <p class="text-white">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur fermentum, felis et tincidunt rutrum, ligula sem
+                    tincidunt mi, ac mattis diam libero quis elit. Quisque lacus
+                    odio, pellentesque id fringilla id, semper non lectus.
+                    <br /><br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                    fermentum, felis et tincidunt rutrum, ligula sem tincidunt mi,
+                    ac mattis diam libero quis elit. Quisque lacus odio, pellentesque
+                    id fringilla id, semper non lectus.
+                </p>
+            </div>
+            <div class="flex flex-col items-center">
+                <Icon
+                    name="pin"
+                    size="400"
+                    style="fill-[#DB3B07] -mb-48 z-10"
+                />
+                <Icon name="map" size="300" style="fill-white rotate-[30deg]" />
+            </div>
         </section>
         <section
-            class="w-full aspect-video bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-40 flex items-center gap-24"
+            class="w-full aspect-video bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-40 flex justify-center items-center gap-24"
         >
-            <div>
-                <h1>Follow Our Journey</h1>
-                <p>
+            <div class="max-w-[65ch] flex flex-col gap-4">
+                <h1 class="font-display">Follow Our Journey!</h1>
+                <p class="text-xl">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br
                     />
                     Curabitur fermentum, felis et tincidunt rutrum, ligula sem tincidunt
@@ -116,9 +155,31 @@ import Location from "../components/Location.astro";
                     id fringilla id, semper non lectus.
                     <br /><br />
                     elwintechnologies@gmail.com
+                    <div class="flex gap-8">
+                        <Icon name="instagram" size="96" />
+                        <Icon name="facebook" size="96" />
+                        <Icon name="email" size="96" />
+                    </div>
                 </p>
             </div>
+            <div
+                class="border-8 border-black rounded-[2rem] h-full aspect-[375/812] bg-white"
+            >
+                <div id="instafeed"></div>
+            </div>
         </section>
-        <footer>elwin studios</footer>
+        <footer
+            class="flex justify-center p-8 text-2xl font-display font-bold bg-white"
+        >
+            <h2 class="font-[gilroy-heavy]">elwin</h2>&nbsp;
+            <h2 class="font-[gilroy-regular]">studios</h2>
+        </footer>
     </main>
 </Layout>
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+        accessToken: "your-token",
+    });
+    feed.run();
+</script>

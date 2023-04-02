@@ -3,17 +3,14 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
-        boxShadow: ({ theme }) => ({
-            sm: '0 6px 18px rgba(36, 38, 46, 0.06)',
-            DEFAULT: `0.125rem 0.25rem 0 ${theme('colors.primary.800')}`,
-            inner: `inset 0.125rem 0.25rem 0 ${theme('colors.primary.700')}`,
-            none: '0 0 #0000',
-        }),
         fontFamily: {
             sans: ['"Open Sans"', 'sans-serif'],
             display: ['"Gilroy-Bold"', '"Open Sans"', 'sans-serif']
         },
         extend: {
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            },
             spacing: {
                 '4.5': '1.125rem',
             },
@@ -139,58 +136,34 @@ module.exports = {
                     listStyleType: 'disc',
                     marginLeft: '1.5rem',
                 },
-
-                // Scrollbar
-                '.scroll, .scroll-flush': {
-                    // .scroll: 4px Spacing to the right
-                    // .scroll-flush: flush against container wall
-                    overflow: 'hidden',
-                },
-                '.scroll:hover, .scroll-flush:hover': {
-                    overflow: 'overlay !important', // Chrome
-                    overflowY: 'auto', // Firefox / Safari
-                    overflowX: 'auto', // Firefox / Safari
-                },
-                '.scroll::-webkit-scrollbar': {
-                    height: '1rem',
-                    width: '1rem',
-                },
-                '.scroll-flush::-webkit-scrollbar': {
-                    height: '0.5rem',
-                    width: '0.5rem',
-                },
-                '.scroll::-webkit-scrollbar-thumb, .scroll-flush::-webkit-scrollbar-thumb': {
-                    backgroundColor: theme('colors.neutral.400'),
-                },
-                '.scroll::-webkit-scrollbar-track-piece, .scroll-flush::-webkit-scrollbar-track-piece': {
-                    backgroundColor: theme('colors.neutral.100'),
-                },
-                '.scroll::-webkit-scrollbar-thumb, .scroll::-webkit-scrollbar-track-piece': {
-                    border: '0.25rem solid rgba(0, 0, 0, 0)',
-                    backgroundClip: 'padding-box',
-                    borderRadius: '1rem',
-                },
-                '.scroll-flush::-webkit-scrollbar-thumb, .scroll-flush::-webkit-scrollbar-track-piece': {
-                    borderRadius: '1rem',
-                    margin: '0.25rem',
-                }
             })
             addUtilities({
                 // Scrollbar Styling
-                // .scroll: 4px Spacing to the right */
-                // .scroll-flush: flush against container wall */
                 '*::-webkit-scrollbar': {
                     height: '1rem',
                     width: '1rem',
                 },
                 '*::-webkit-scrollbar-thumb': {
-                    backgroundColor: theme('colors.neutral.500'),
+                    background: 'linear-gradient(180deg, rgba(248,213,67,1) 0%, rgba(234,136,37,1) 66.66%, rgba(219,59,7,1) 100%, rgba(234,136,37,1) 333%)',
                     border: '0.25rem solid rgba(0, 0, 0, 0)',
                     backgroundClip: 'padding-box',
                     borderRadius: '1rem',
                 },
+                '*::-webkit-scrollbar-track-piece': {
+                    backgroundColor: 'black',
+                },
                 '*::-webkit-scrollbar-track': {
                     backgroundColor: 'rgba(0,0,0,0)',
+                },
+                /* Chrome, Safari and Opera */
+                '.no-scrollbar::-webkit-scrollbar': {
+                    display: 'none',
+                },
+                '.no-scrollbar': {
+                    '-ms-overflow-style': 'none',
+                    /* IE and Edge */
+                    'scrollbar-width': 'none',
+                    /* Firefox */
                 },
             })
         })

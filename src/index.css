@@ -2,23 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* Scrollbar Behavior */
 @supports (overflow: overlay) {
-
     * {
-        overflow: hidden;
-    }
-
-    *:hover {
         overflow: overlay;
     }
 }
 
 @supports not (overflow: overlay) {
-
     * {
-        overflow-y: scroll
+        overflow-y: auto;
     }
 }

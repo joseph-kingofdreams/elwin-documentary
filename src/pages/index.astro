@@ -3,10 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Character from "../components/Character.astro";
 import Icon from "../components/Icon.astro";
 import Location from "../components/Location.astro";
+import More from "../components/More.astro";
+import Profile from "../components/Profile.astro";
 import Team from "../components/Team.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+    title="Agents of the Underground Railroad | Official Documentary Website | Februaery 02 2024"
+>
     <main class="flex flex-col max-w-[1920px] mx-auto">
         <section
             class="relative w-full aspect-video flex justify-center items-center"
@@ -23,98 +27,231 @@ import Team from "../components/Team.astro";
                 >
                 </div>
             </div>
-            <!-- <h1 class="text-8xl text-white font-display uppercase">
-                Chasing Freedom Test
-            </h1> -->
-        </section>
-        <section class="w-full min-h-[720px] p-44 bg-black text-white">
-            <h5 class="w-[50ch] text-2xl font-[gilroy-light] font-4xl">
-                “Where justice is denied, where poverty is enforced, where
-                ignorance prevails, and where any one class is made to feel that
-                society is an organized conspiracy to oppress, rob and degrade
-                them, neither persons nor property will be safe.”
-            </h5>
         </section>
         <section
-            class="w-full min-h-[720px] h-full py-32 px-24 grid grid-cols-[1fr_auto] gap-16 items-center bg-white"
+            class="w-full max-w-screen-2xl mx-auto p-24 max-sm:p-12 flex flex-col-reverse xl:flex-row gap-6 justify-between items-center"
         >
             <div
-                class="bg-orange-500 h-screen aspect-[2/3] rounded-md max-h-[1080px]"
+                class="my-8 text-white flex flex-col justify-center items-center flex-1"
             >
-            </div>
-            <div class="flex flex-col gap-4">
-                <h1 class="font-display">Agents of the Underground Railroad</h1>
-                <p class="grid">
-                    <span><b>Rating:</b> PG-13</span>
-                    <span><b>Release Date:</b> December 21, 2023</span>
-                    <span><b>Genre:</b> Documentary, Historical, Interview</span
+                <h2
+                    class="w-fit 2xl:text-4xl font-[gilroy-light] 2xl:leading-[3.5rem] leading-8 text-2xl"
+                >
+                    But to this solemn resolution I came;<br />
+                    I was free, and they should be free also.<br />
+                    <p
+                        class="text-4xl font-[gilroy-light] mt-4 text-right bg-clip-text text-transparent bg-[linear-gradient(180deg,rgba(219,59,7,1)0%,rgba(234,136,37,1)33.33%,rgba(248,213,67,1)100%)]"
                     >
-                </p>
-                <p>
-                    After the stories of the Revolutionary War, another
-                    generation emerges in the pages of American history.
-                    <br /><br />
-                    “Agents of the Underground Railroad” is set after the American
-                    War for Independence and before the emergence of the Rebellion
-                    (Civil War). We follow the tales of eight agents who are a vital
-                    part of a secret network spanning across the country. We know
-                    them now as the agents of the Underground Railroad.
-                </p>
-                <p>
-                    <b>Directed By</b>
-                    Joshua Li
-                    <br />
-                    <b>Written By</b>
-                    Joshua Li, Jocelyn Li
-                </p>
+                        &#8212; Harriet Tubman
+                    </p>
+                </h2>
+            </div>
+            <div
+                class="relative xl:h-[720px] md:h-[640px] max-md:w-full aspect-[3/4] bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Harriet_Tubman_1895.jpg')] bg-cover"
+            >
+                <div
+                    class="absolute h-full w-full bg-gradient-radial from-transparent via-[rgba(0,0,0,0.25)] to-black"
+                >
+                </div>
+                <div
+                    class="absoulute h-full w-full bg-gradient-radial from-transparent to-black"
+                >
+                </div>
             </div>
         </section>
-        <section class="min-h-screen bg-black py-24 px-24 flex flex-col gap-20">
-            <div class="flex flex-col gap-8">
-                <h1 class="text-white font-display">Cast & Characters</h1>
-                <div class="flex gap-9">
-                    <Character name={"Levi Coffin"} />
-                    <Character name={"Thomas Garrett"} />
-                    <Character name={"John Rankin"} />
-                    <Character name={"Laura S. Haviland"} />
-                    <Character name={"William Still"} />
+        <section class="bg-white">
+            <div
+                class="w-full max-w-screen-2xl mx-auto lg:p-24 p-16 max-sm:p-6 grid md:grid-cols-[1fr_1fr] lg:gap-16 gap-8"
+            >
+                <div
+                    class="bg-orange-500 max-h-screen aspect-[2/3] rounded-md max-h-[1080px] mx-auto w-full"
+                >
                 </div>
-                <div class="flex gap-9">
-                    <Character name={"Harriet Tubman"} />
-                    <Character name={"Abraham Lincoln"} />
-                    <Character name={"Josiah Henson"} />
-                    <Character name={"John Brown"} />
-                    <Character name={"Salmon Portland Chase"} />
-                </div>
-                <div class="flex gap-9">
-                    <Character name={"Vestal Coffin"} />
-                    <Character name={"William H. Seward"} />
-                    <Character name={"Adam Lowry Rankin"} />
-                    <Character name={"Harriet Beecher Stowe"} />
-                    <Character name={"Peter Still"} />
+                <div class="flex flex-col gap-4 min-w-0 my-auto">
+                    <h1 class="font-display">
+                        Agents of the Underground Railroad
+                    </h1>
+                    <p class="grid text-xs">
+                        <span><b>Rating:</b> PG-13</span>
+                        <span><b>Release Date:</b> December 21, 2023</span>
+                        <span
+                            ><b>Genre:</b> Documentary, Historical, Interview</span
+                        >
+                    </p>
+                    <p>
+                        After the events of the Revolutionary War, another
+                        generation emerges in the pages of American history.
+                        <br /><br /> This documentary series traces the stories of
+                        ordinary individuals who played extraordinary roles on the
+                        network we now know as the Underground Railroad. Follow their
+                        stories from its humble beginnings to the highest offices
+                        in America.
+                    </p>
+                    <div class="flex gap-4">
+                        <Icon name="instagram" size="32" />
+                        <Icon name="facebook" size="32" />
+                        <Icon name="email" size="32" />
+                    </div>
+                    <p>
+                        <b>Directed By</b><br />
+                        Joshua Li
+                    </p>
+                    <p>
+                        <b>Written By</b><br />
+                        Joshua Li, Jocelyn Li
+                    </p>
                 </div>
             </div>
-            <div class="flex flex-col gap-8">
+        </section>
+        <section
+            class="max-w-screen-2xl mx-auto w-full bg-black lg:p-24 p-16 max-sm:p-6 flex flex-col gap-16"
+        >
+            <div class="flex flex-col lg:gap-8 gap-4">
+                <h1 class="text-white font-display">Agents</h1>
+                <div
+                    class="flex md:flex-col lg:gap-8 gap-4 md:px-0 md:mx-0 px-16 -mx-16 max-sm:px-6 max-sm:-mx-6 max-md:overflow-auto snap-mandatory snap-x no-scrollbar"
+                >
+                    <div class="flex lg:gap-8 gap-4 peer/character">
+                        <Character name={"Levi Coffin"} />
+                        <Character name={"Thomas Garrett"} />
+                        <Character name={"John Rankin"} />
+                        <Character name={"Laura S. Haviland"} />
+                        <Character name={"William Still"} />
+                    </div>
+                    <More id="characters">
+                        <div
+                            class="flex lg:gap-8 gap-4 flex-1 md:peer-[.flex]/character:hidden"
+                        >
+                            <Character name={"Harriet Tubman"} />
+                            <Character name={"Abraham Lincoln"} />
+                            <Character name={"Josiah Henson"} />
+                            <Character name={"John Brown"} />
+                            <Character name={"Salmon Portland Chase"} />
+                        </div>
+                        <div
+                            class="flex lg:gap-8 gap-4 flex-1 md:peer-[.flex]/character:hidden"
+                        >
+                            <Character name={"Vestal Coffin"} />
+                            <Character name={"William H. Seward"} />
+                            <Character name={"Adam Lowry Rankin"} />
+                            <Character name={"Harriet Beecher Stowe"} />
+                            <Character name={"Peter Still"} />
+                        </div>
+                    </More>
+                </div>
+            </div>
+            <div class="flex flex-col lg:gap-8 gap-4">
                 <h1 class="text-white font-display">Film Locations</h1>
-                <Location name={"Adrian, MI"} />
-                <Location name={"Auburn, NY"} />
-                <Location name={"Baltimore, MD"} />
+                <div class="flex flex-col lg:gap-8 gap-4 peer/location">
+                    <Location name={"Adrian, MI"} />
+                    <Location name={"Auburn, NY"} />
+                    <Location name={"Baltimore, MD"} />
+                </div>
+                <More id="locations" style="flex-col">
+                    <div
+                        class="flex flex-col lg:gap-8 gap-4 flex-1 md:peer-[.flex]/location:hidden"
+                    >
+                        <Location name={"Adrian, MI"} />
+                        <Location name={"Auburn, NY"} />
+                        <Location name={"Baltimore, MD"} />
+                        <Location name={"Adrian, MI"} />
+                        <Location name={"Auburn, NY"} />
+                        <Location name={"Baltimore, MD"} />
+                        <Location name={"Adrian, MI"} />
+                    </div>
+                </More>
                 <div class="flex gap-9"></div>
             </div>
         </section>
-        <section class="p-24 flex flex-col gap-8 bg-white">
-            <h1 class="font-display">Production Team & Crew</h1>
-            <div class="flex gap-8">
-                <Team title="Researcher" name="Jessica Li" />
-                <Team title="Director | Cinemetography" name="Joshua Li" />
-                <Team title="Writing | Research" name="Jocelyn Li" />
-                <Team title="Media | Marketing" name="Joseph Li" />
-                <Team title="Crew | Grip" name="John Li" />
-                <Team title="PR | Broadcasting" name="Jeremy Li" />
+        <section class="bg-white">
+            <div
+                class="max-w-screen-2xl w-full mx-auto lg:p-24 p-16 max-sm:p-6 flex flex-col gap-8 bg-white"
+            >
+                <h1 class="font-display">Production Team & Crew</h1>
+                <p class="max-w-[75ch]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Integer sed odio sapien. Nunc accumsan lectus nec odio
+                    posuere, non vestibulum ipsum rhoncus. Cras maximus nibh
+                    eget odio varius mollis. Pellentesque non nulla cursus,
+                    sagittis nisi et, gravida metus. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit.
+                </p>
+                <fieldset class="grid gap-x-8 gap-y-12 grid-cols-6">
+                    <Team
+                        id="jessica"
+                        title="Writer | Researcher"
+                        name="Jessica Li"
+                    />
+                    <Team
+                        id="joshua"
+                        title="Director | Cinemetographer"
+                        name="Joshua Li"
+                    />
+                    <Team
+                        id="jocelyn"
+                        title="Writer | Researcher"
+                        name="Jocelyn Li"
+                    />
+                    <Team
+                        id="joseph"
+                        title="Media | Marketing"
+                        name="Joseph Li"
+                    />
+                    <Team id="john" title="Crew | Grip" name="John Li" />
+                    <Team
+                        id="jeremy"
+                        title="PR | Broadcasting"
+                        name="Jeremy Li"
+                    />
+                    <Profile
+                        bio="Jessica battled and won over childhood leukemia. She recently graduated from bible college with an undergraduate degree. She is intellectual, gifted in language and super organized. She possesses an incredible memory. She helps with the researching effort on the Underground Railroad. She is leading the research for our next topic: the Civil War. She has a big heart to help people. In her quiet way, she develops deep relationships with her friends and her students from youth groups."
+                        id="jessica"
+                        title="Writer | Researcher"
+                        img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
+                        name="Jessica Li"
+                    />
+                    <Profile
+                        bio="Joshua is mechanically gifted. He obtained formal training in auto-mechanics. But his true passion and gift lie in his ability to tell stories through film. After a year of working as a mechanic, he turned to developing that passion. He took on a year-long journey with Vancouver Film School. Through the year of training, his talent is well recognized by his teachers and peers. Joshua is also gifted in business. Outside of filming, Joshua is a Chief Scout (Eagle Scout). He is an avid mountain hiker and outdoorsman."
+                        id="joshua"
+                        title="Director | Cinemetographer"
+                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+                        name="Joshua Li"
+                    />
+                    <Profile
+                        bio="Jocelyn is a super relator. She is gifted in language and the ability to consume large amounts of materials in a relatively short time. She is passionate about stories and American history. She turned down the opportunity to pursue an academic career and started researching and writing on underground railroad two years ago. During this time, she has read over 50 books on the topic. She wrote the first drafts of two underground railroad historical novels. Her extensive research and notes can be compiled into an excellent textbook. She is learning Spanish in her past time."
+                        id="jocelyn"
+                        title="Writer | Researcher"
+                        img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
+                        name="Jocelyn Li"
+                    />
+                    <Profile
+                        bio="Joseph is gifted with an artistic eye and drawn to colors and visual arts since he was very young. He completed a diploma in digital design and development. He developed a small video game for a competition and gained great experience and feedback. He is methodical and thoughtful. He enjoys helping with various creative and technical tasks: website-development, youtube, marketing, logo design and branding, computer upgrade, etc. He has great ambition to be great in all that he does."
+                        id="joseph"
+                        title="Media | Marketing"
+                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+                        name="Joseph Li"
+                    />
+                    <Profile
+                        bio="John is a super helper. He is always ready to help. He has overcome a year-long battle over a fungal infection and a blood disease that almost took his life when he was only nine. Along with his competitive nature, he tirelessly analyzes any board games he plays to figure out the best path to win. He will play the important supportive role as a film crewman. John is an avid archer. His dream is to represent the USA in the Olympic archery competition."
+                        id="john"
+                        title="Crew | Grip"
+                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+                        name="John Li"
+                    />
+                    <Profile
+                        bio="Jeremy is finishing his first year in Journalism School. His passion is to communicate and to bring the truth to light. He is passionate about protecting freedom in America. He naturally wants to do what is right. Even though he is the youngest, he often is the one to speak up for what is right. He is the face and lead of the Elwin Studios YouTube Channel. He will be the voice and interviewer for the documentary. He is gifted in language and has a bright mind. He will take part in the research of the American Constitution in preparation for future project."
+                        id="jeremy"
+                        title="PR | Broadcasting"
+                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+                        name="Jeremy Li"
+                    />
+                </fieldset>
             </div>
         </section>
-        <section class="bg-black p-24 flex items-center gap-6">
-            <div class="flex flex-col gap-6">
+        <section
+            class="max-w-screen-2xl mx-auto w-full bg-black lg:p-24 p-16 max-sm:p-6 flex items-center gap-6 max-md:flex-col-reverse max-md:gap-10"
+        >
+            <div class="flex flex-col gap-6 max-w-[75ch] min-w-[144px]">
                 <div>
                     <h1 class="text-white font-display">Across America!</h1>
                     <p class="text-white text-2xl font-[gilroy-regular]">
@@ -126,14 +263,15 @@ import Team from "../components/Team.astro";
                     Curabitur fermentum, felis et tincidunt rutrum, ligula sem
                     tincidunt mi, ac mattis diam libero quis elit. Quisque lacus
                     odio, pellentesque id fringilla id, semper non lectus.
-                    <br /><br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                    fermentum, felis et tincidunt rutrum, ligula sem tincidunt mi,
-                    ac mattis diam libero quis elit. Quisque lacus odio, pellentesque
-                    id fringilla id, semper non lectus.
+                </p>
+                <p class="text-white">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur fermentum, felis et tincidunt rutrum, ligula sem
+                    tincidunt mi, ac mattis diam libero quis elit. Quisque lacus
+                    odio, pellentesque id fringilla id, semper non lectus.
                 </p>
             </div>
-            <div class="flex flex-col items-center">
+            <div class="lg:flex hidden flex-col items-center mx-auto scale-1">
                 <Icon
                     name="pin"
                     size="400"
@@ -141,9 +279,17 @@ import Team from "../components/Team.astro";
                 />
                 <Icon name="map" size="300" style="fill-white rotate-[30deg]" />
             </div>
+            <div class="lg:hidden flex flex-col items-center mx-auto scale-1">
+                <Icon
+                    name="pin"
+                    size="200"
+                    style="fill-[#DB3B07] -mb-[6rem] z-10"
+                />
+                <Icon name="map" size="150" style="fill-white rotate-[30deg]" />
+            </div>
         </section>
         <section
-            class="w-full aspect-video bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-40 flex justify-center items-center gap-24"
+            class="w-full aspect-video bg-gradient-to-t from-[#EA8825] to-[#F8D543] lg:p-24 p-16 flex justify-center items-center lg:gap-16 gap-8 md:min-h-[500px] max-md:flex-col"
         >
             <div class="max-w-[65ch] flex flex-col gap-4">
                 <h1 class="font-display">Follow Our Journey!</h1>
@@ -155,24 +301,34 @@ import Team from "../components/Team.astro";
                     id fringilla id, semper non lectus.
                     <br /><br />
                     elwintechnologies@gmail.com
-                    <div class="flex gap-8">
+                    <div class="lg:flex hidden gap-8">
                         <Icon name="instagram" size="96" />
                         <Icon name="facebook" size="96" />
                         <Icon name="email" size="96" />
                     </div>
+                    <div class="lg:hidden flex gap-8">
+                        <Icon name="instagram" size="64" />
+                        <Icon name="facebook" size="64" />
+                        <Icon name="email" size="64" />
+                    </div>
                 </p>
             </div>
             <div
-                class="border-8 border-black rounded-[2rem] h-full aspect-[375/812] bg-white"
+                class="border-8 border-black rounded-[2rem] h-full aspect-[375/812] bg-white max-md:w-full"
             >
                 <div id="instafeed"></div>
             </div>
         </section>
-        <footer
-            class="flex justify-center p-8 text-2xl font-display font-bold bg-white"
-        >
-            <h2 class="font-[gilroy-heavy]">elwin</h2>&nbsp;
-            <h2 class="font-[gilroy-regular]">studios</h2>
+        <footer class="flex justify-center p-8 bg-white">
+            <a
+                class="flex text-2xl font-display font-bold"
+                href="https://www.youtube.com/channel/UCcJ0ceX0GR3RUR_Ynfzx4QQ/"
+                target="_blank"
+            >
+                <h2 class="font-[gilroy-heavy]">elwin</h2>&nbsp;
+                <h2 class="font-[gilroy-regular]">studios</h2>&nbsp;
+                <Icon name="youTube" size="40" style="fill-[#DB3B07]" />
+            </a>
         </footer>
     </main>
 </Layout>

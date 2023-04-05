@@ -7,7 +7,9 @@ export interface Props {
 const { name, img } = Astro.props;
 ---
 
-<div class="flex flex-col gap-2 flex-1">
-    <div class="bg-orange-500 min-w-52 aspect-[8/1] rounded-md"></div>
+<div
+    class="flex flex-col gap-2 flex-1 min-w-[calc(33vw-80px)] max-sm:w-[calc(100vw-48px)] snap-start scroll-mx-24 max-sm:scroll-mx-6"
+>
+    <div class="bg-orange-500 min-w-52 aspect-video rounded-md"></div>
     <p class="text-white text-semibold">{name}</p>
 </div>

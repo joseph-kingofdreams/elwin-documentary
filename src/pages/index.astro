@@ -9,54 +9,42 @@ import Team from "../components/Team.astro";
 ---
 
 <Layout
-    title="Agents of the Underground Railroad | Official Documentary Website | Februaery 02 2024"
+    title="Agents of the Underground Railroad | Official Website | February 02 2024"
 >
     <main class="flex flex-col max-w-[1920px] mx-auto">
         <section
             class="relative w-full aspect-video flex justify-center items-center"
         >
             <div
-                class="absolute w-full aspect-video bg-[url('')] bg-cover bg-center"
+                class="absolute w-full aspect-video bg-[url('/Hero.webp')] bg-cover bg-center"
             >
                 <div
-                    class="absolute h-full w-full bg-gradient-to-t from-[#F8D543] via-[#F8D543] to-[#FF6F00] mix-blend-color"
-                >
-                </div>
-                <div
-                    class="absolute h-full w-full bg-gradient-to-t from-black via-transparent to-transparent"
+                    class="absolute h-full w-full bg-gradient-to-t from-[#F8D543] via-[#F8D543] to-[#FF6F00] mix-blend-color opacity-50"
                 >
                 </div>
             </div>
         </section>
         <section
-            class="w-full max-w-screen-2xl mx-auto p-24 max-sm:p-12 flex flex-col-reverse xl:flex-row gap-6 justify-between items-center"
+            class="w-full max-w-screen mx-auto p-24 max-sm:p-12 flex flex-col-reverse xl:flex-row gap-6 justify-between items-center"
         >
             <div
-                class="my-8 text-white flex flex-col justify-center items-center flex-1"
+                class="text-white flex flex-col items-center flex-4 text-4xl font-[gilroy-light]"
             >
-                <h2
-                    class="w-fit 2xl:text-4xl font-[gilroy-light] 2xl:leading-[3.5rem] leading-8 text-2xl"
+                <span
+                    class="capitalize w-fit font-[gilroy-bold] min-[1718px]:text-[4rem] text-[3.5rem] xl:max-2xl:text-[3rem] leading-[4.5rem] leading-8"
                 >
                     But to this solemn resolution I came;<br />
                     I was free, and they should be free also.<br />
-                    <p
-                        class="text-4xl font-[gilroy-light] mt-4 text-right bg-clip-text text-transparent bg-[linear-gradient(180deg,rgba(219,59,7,1)0%,rgba(234,136,37,1)33.33%,rgba(248,213,67,1)100%)]"
-                    >
-                        &#8212; Harriet Tubman
-                    </p>
-                </h2>
+                </span>
+                <span
+                    class="font-[gilroy-light] mt-4 text-right w-full bg-clip-text text-transparent bg-[linear-gradient(180deg,rgba(219,59,7,1)0%,rgba(234,136,37,1)33.33%,rgba(248,213,67,1)100%)]"
+                >
+                    &#8212; Harriet Tubman
+                </span>
             </div>
             <div
-                class="relative xl:h-[720px] md:h-[640px] max-md:w-full aspect-[3/4] bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Harriet_Tubman_1895.jpg')] bg-cover"
+                class="relative flex-1 aspect-[3/4] min-h-[270px] max-xl:aspect-square bg-[url('/Harriet.webp')] bg-contain bg-no-repeat bg-center saturate-0"
             >
-                <div
-                    class="absolute h-full w-full bg-gradient-radial from-transparent via-[rgba(0,0,0,0.25)] to-black"
-                >
-                </div>
-                <div
-                    class="absoulute h-full w-full bg-gradient-radial from-transparent to-black"
-                >
-                </div>
             </div>
         </section>
         <section class="bg-white">
@@ -64,7 +52,7 @@ import Team from "../components/Team.astro";
                 class="w-full max-w-screen-2xl mx-auto lg:p-24 p-16 max-sm:p-6 grid md:grid-cols-[1fr_1fr] lg:gap-16 gap-8"
             >
                 <div
-                    class="bg-orange-500 max-h-screen aspect-[2/3] rounded-md max-h-[1080px] mx-auto w-full"
+                    class="aspect-[2/3] rounded-md max-h-[1080px] mx-auto w-full bg-[url('/Teaser.webp')] bg-cover"
                 >
                 </div>
                 <div class="flex flex-col gap-4 min-w-0 my-auto">
@@ -73,7 +61,7 @@ import Team from "../components/Team.astro";
                     </h1>
                     <p class="grid text-xs">
                         <span><b>Rating:</b> PG-13</span>
-                        <span><b>Release Date:</b> December 21, 2023</span>
+                        <span><b>Release Date:</b> February 2, 2024</span>
                         <span
                             ><b>Genre:</b> Documentary, Historical, Interview</span
                         >
@@ -112,29 +100,65 @@ import Team from "../components/Team.astro";
                     class="flex md:flex-col lg:gap-8 gap-4 md:px-0 md:mx-0 px-16 -mx-16 max-sm:px-6 max-sm:-mx-6 max-md:overflow-auto snap-mandatory snap-x no-scrollbar"
                 >
                     <div class="flex lg:gap-8 gap-4 peer/character">
-                        <Character name={"Levi Coffin"} />
-                        <Character name={"Thomas Garrett"} />
-                        <Character name={"John Rankin"} />
-                        <Character name={"Laura S. Haviland"} />
-                        <Character name={"William Still"} />
+                        <Character
+                            name={"Levi Coffin"}
+                            img="/Levi_Coffin.webp"
+                        />
+                        <Character
+                            name={"Thomas Garrett"}
+                            img="/Thomas_Garrett.webp"
+                        />
+                        <Character
+                            name={"John Rankin"}
+                            img="/John_Rankin.webp"
+                        />
+                        <Character
+                            name={"Laura S. Haviland"}
+                            img="/Laura_Haviland.webp"
+                        />
+                        <Character
+                            name={"William Still"}
+                            img="/William_Still.webp"
+                        />
                     </div>
                     <More id="characters">
                         <div
                             class="flex lg:gap-8 gap-4 flex-1 md:peer-[.flex]/character:hidden"
                         >
-                            <Character name={"Harriet Tubman"} />
-                            <Character name={"Abraham Lincoln"} />
-                            <Character name={"Josiah Henson"} />
-                            <Character name={"John Brown"} />
-                            <Character name={"Salmon Portland Chase"} />
+                            <Character
+                                name={"Harriet Tubman"}
+                                img="/Harriet_Tubman.webp"
+                            />
+                            <Character
+                                name={"Abraham Lincoln"}
+                                img="/Abraham_Lincoln.webp"
+                            />
+                            <Character
+                                name={"Josiah Henson"}
+                                img="/Josiah_Henson.webp"
+                            />
+                            <Character
+                                name={"John Brown"}
+                                img="/John_Brown.webp"
+                            />
+                            <Character
+                                name={"Salmon P. Chase"}
+                                img="/Salmon_Chase.webp"
+                            />
                         </div>
                         <div
                             class="flex lg:gap-8 gap-4 flex-1 md:peer-[.flex]/character:hidden"
                         >
                             <Character name={"Vestal Coffin"} />
-                            <Character name={"William H. Seward"} />
+                            <Character
+                                name={"William H. Seward"}
+                                img="/William_Seward.webp"
+                            />
                             <Character name={"Adam Lowry Rankin"} />
-                            <Character name={"Harriet Beecher Stowe"} />
+                            <Character
+                                name={"Harriet B. Stowe"}
+                                img="/Harriet_Stowe.webp"
+                            />
                             <Character name={"Peter Still"} />
                         </div>
                     </More>
@@ -142,25 +166,28 @@ import Team from "../components/Team.astro";
             </div>
             <div class="flex flex-col lg:gap-8 gap-4">
                 <h1 class="text-white font-display">Film Locations</h1>
-                <div class="flex flex-col lg:gap-8 gap-4 peer/location">
-                    <Location name={"Adrian, MI"} />
-                    <Location name={"Auburn, NY"} />
-                    <Location name={"Baltimore, MD"} />
+                <div
+                    class="flex lg:gap-8 gap-4 overflow-auto snap-mandatory snap-x px-24 -mx-24 px-16 -mx-16 max-md:px-6 max-md:-mx-6"
+                >
+                    <Location name={"Delaware"} />
+                    <Location name={"Georgria"} />
+                    <Location name={"Illinois"} />
+                    <Location name={"Indiana"} />
+                    <Location name={"Louisiana"} />
+                    <Location name={"Maryland"} />
+                    <Location name={"Massachusetts"} />
+                    <Location name={"Michigan"} />
+                    <Location name={"Missouri"} />
+                    <Location name={"New Hampshire"} />
+                    <Location name={"North Carolina"} />
+                    <Location name={"Ohio"} />
+                    <Location name={"Ontario"} />
+                    <Location name={"Pennsylvania"} />
+                    <Location name={"Texas"} />
+                    <Location name={"Washington"} />
+                    <Location name={"Washington, DC"} />
+                    <Location name={"West Virginia"} />
                 </div>
-                <More id="locations" style="flex-col">
-                    <div
-                        class="flex flex-col lg:gap-8 gap-4 flex-1 md:peer-[.flex]/location:hidden"
-                    >
-                        <Location name={"Adrian, MI"} />
-                        <Location name={"Auburn, NY"} />
-                        <Location name={"Baltimore, MD"} />
-                        <Location name={"Adrian, MI"} />
-                        <Location name={"Auburn, NY"} />
-                        <Location name={"Baltimore, MD"} />
-                        <Location name={"Adrian, MI"} />
-                    </div>
-                </More>
-                <div class="flex gap-9"></div>
             </div>
         </section>
         <section class="bg-white">
@@ -259,16 +286,12 @@ import Team from "../components/Team.astro";
                     </p>
                 </div>
                 <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur fermentum, felis et tincidunt rutrum, ligula sem
-                    tincidunt mi, ac mattis diam libero quis elit. Quisque lacus
-                    odio, pellentesque id fringilla id, semper non lectus.
-                </p>
-                <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Curabitur fermentum, felis et tincidunt rutrum, ligula sem
-                    tincidunt mi, ac mattis diam libero quis elit. Quisque lacus
-                    odio, pellentesque id fringilla id, semper non lectus.
+                    We’re taking our curiosity across America, following the
+                    lives of Underground Railroad Operators. The places they
+                    lived. The people they met. The reasons for their burning
+                    desire to act on their convictions. We will walk where they
+                    walked, eat where they ate, and talk to the modern experts
+                    of these; the Agents of the Underground Railroad
                 </p>
             </div>
             <div class="lg:flex hidden flex-col items-center mx-auto scale-1">
@@ -294,11 +317,9 @@ import Team from "../components/Team.astro";
             <div class="max-w-[65ch] flex flex-col gap-4">
                 <h1 class="font-display">Follow Our Journey!</h1>
                 <p class="text-xl">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br
-                    />
-                    Curabitur fermentum, felis et tincidunt rutrum, ligula sem tincidunt
-                    mi, ac mattis diam libero quis elit. Quisque lacus odio, pellentesque
-                    id fringilla id, semper non lectus.
+                    Follow us on social media to get our on-the-go updates and
+                    behind-the-scenes footage as we explore the “Agents of the
+                    Underground Railroad.”
                     <br /><br />
                     elwintechnologies@gmail.com
                     <div class="lg:flex hidden gap-8">

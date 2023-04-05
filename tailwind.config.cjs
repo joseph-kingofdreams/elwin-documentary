@@ -1,23 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin')
 module.exports = {
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    content: ['./src/**/*.{astro,html,ts,tsx}'],
     theme: {
         fontFamily: {
             sans: ['"Open Sans"', 'sans-serif'],
-            display: ['"Gilroy-Bold"', '"Open Sans"', 'sans-serif']
-        },
-        extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-            },
-            spacing: {
-                '4.5': '1.125rem',
-            },
+            display: ['"Gilroy-Bold"', 'sans-serif']
         },
     },
     plugins: [
-        require('@tailwindcss/line-clamp'),
         plugin(function ({ addBase, addUtilities, theme }) {
             addBase({
                 '*': {
@@ -104,37 +95,6 @@ module.exports = {
                 a: {
                     display: 'inline-block', // Enables line-height property for custom/anchor tags 
                     textDecoration: 'none',
-                },
-
-                // Tables 
-                table: {
-                    margin: 0,
-                },
-                'thead, tr': {
-                    border: 'none',
-                },
-                'th, td': {
-                    verticalAlign: 'baseline',
-                },
-                th: {
-                    padding: '0 1.5rem 0.75rem 0',
-                    textAlign: 'left'
-                },
-                td: {
-                    padding: '1rem 1.5rem 1rem 0',
-                },
-                'td:last-child, th:last-child': {
-                    paddingRight: 0,
-                },
-
-                // Lists 
-                ul: {
-                    display: 'grid',
-                    gap: '1rem',
-                },
-                li: {
-                    listStyleType: 'disc',
-                    marginLeft: '1.5rem',
                 },
             })
             addUtilities({

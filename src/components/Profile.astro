@@ -1,40 +1,67 @@
 ---
 export interface Props {
-    bio: string;
-    id: string;
-    img: string;
-    name: string;
-    title: string;
+  bio: string;
+  id: string;
+  img: string;
+  name: string;
+  title: string;
 }
 
 const { bio, id, img, name, title } = Astro.props;
 
 const output = {
-    jessica: "peer-checked/jessica:block",
-    joshua: "peer-checked/joshua:block",
-    jocelyn: "peer-checked/jocelyn:block",
-    joseph: "peer-checked/joseph:block",
-    john: "peer-checked/john:block",
-    jeremy: "peer-checked/jeremy:block",
+  jessica: "peer-checked/jessica:block",
+  joshua: "peer-checked/joshua:block",
+  jocelyn: "peer-checked/jocelyn:block",
+  joseph: "peer-checked/joseph:block",
+  john: "peer-checked/john:block",
+  jeremy: "peer-checked/jeremy:block",
 };
 ---
 
-<div
-    class={"rounded-[16px] py-10 lg:px-20 p-10 drop-shadow-2xl bg-white lg:hidden block col-span-6 scale-100 hover:scale-105 transition-all duration-500 " +
+<!-- <figure
+    class={"md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800 lg:hidden col-span-6 " +
         output[id]}
 >
-    <div class="flex gap-8 items-start max-md:flex-col">
-        <div
-            class="max-w-xs min-w-[96px] aspect-square rounded-full overflow-hidden flex-2"
-        >
-            <img class="w-full" src={img} alt="" />
-        </div>
-        <div class="flex-1 flex flex-col gap-3 sm:min-w-[47ch]">
-            <div>
-                <h5 class="font-display">{name}</h5>
-                <h6 class="text-semibold font-[gilroy-light]">{title}</h6>
+    <img
+        class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+        src={img}
+        alt=""
+        width="384"
+        height="512"
+    />
+    <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+        <blockquote>
+            <p class="text-lg font-medium">
+                {bio}
+            </p>
+        </blockquote>
+        <figcaption class="font-medium">
+            <div class="text-sky-500 dark:text-sky-400">
+                {name}
             </div>
-            <p class="text-semibold">{bio}</p>
-        </div>
+            <div class="text-slate-700 dark:text-slate-500">
+                {title}
+            </div>
+        </figcaption>
     </div>
+</figure> -->
+<div
+  class={"rounded-[16px] py-10 lg:px-20 p-10 drop-shadow-2xl bg-white lg:hidden block col-span-6 scale-100 hover:scale-105 transition-all duration-500 " +
+    output[id]}
+>
+  <div class="flex gap-8 items-start max-md:flex-col">
+    <div
+      class="max-w-xs min-w-[96px] aspect-square rounded-full overflow-hidden flex-2"
+    >
+      <img class="w-full" src={img} alt="" />
+    </div>
+    <div class="flex-1 flex flex-col gap-3 sm:min-w-[47ch]">
+      <div>
+        <h5 class="font-display">{name}</h5>
+        <h6 class="font-[gilroy-light]">{title}</h6>
+      </div>
+      <p class="xl:text-lg">{bio}</p>
+    </div>
+  </div>
 </div>

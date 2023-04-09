@@ -18,7 +18,7 @@ module.exports = {
                     display: 'block',
                     margin: 0,
                     fontWeight: 400,
-                    color: theme('colors.secondary.DEFAULT'),
+                    color: theme('colors.neutral.950'),
                 },
                 body: {
                     minHeight: '100vh',

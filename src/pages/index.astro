@@ -3,360 +3,299 @@ import Layout from "../layouts/Layout.astro";
 import Character from "../components/Character.astro";
 import Icon from "../components/Icon.astro";
 import Location from "../components/Location.astro";
-import More from "../components/More.astro";
 import Profile from "../components/Profile.astro";
 import Team from "../components/Team.astro";
+import Instagram from "../components/Instagram";
+import Hero from "../sections/Hero";
 ---
 
 <Layout
-    title="Agents of the Underground Railroad | Official Website | February 02 2024"
+  title="Agents of the Underground Railroad | Official Website | February 02 2024"
 >
-    <main class="flex flex-col max-w-[1920px] mx-auto">
-        <section
-            class="relative w-full aspect-video flex justify-center items-center"
+  <main class="mx-auto flex max-w-[1920px] flex-col">
+    <Hero client:load />
+    <section
+      class="max-w-screen mx-auto flex w-full flex-col-reverse items-center justify-between gap-6 p-24 max-sm:p-12 xl:flex-row"
+    >
+      <div
+        class="flex-4 flex flex-col items-center font-[gilroy-light] text-4xl text-white"
+      >
+        <span
+          class="w-fit font-[gilroy-bold] text-[3.5rem] leading-[4.5rem] leading-8 max-sm:text-[2rem] max-sm:leading-[2.5rem] xl:max-2xl:text-[3rem] min-[1718px]:text-[4rem]"
         >
-            <div
-                class="absolute w-full aspect-video bg-[url('/Hero.webp')] bg-cover bg-center"
-            >
-                <div
-                    class="absolute h-full w-full bg-gradient-to-t from-[#F8D543] via-[#F8D543] to-[#FF6F00] mix-blend-color opacity-50"
-                >
-                </div>
-            </div>
-        </section>
-        <section
-            class="w-full max-w-screen mx-auto p-24 max-sm:p-12 flex flex-col-reverse xl:flex-row gap-6 justify-between items-center"
+          But to this solemn resolution I came;<br />
+          I was free, and they should be free also.<br />
+        </span>
+        <span
+          class="mt-4 w-full bg-[linear-gradient(180deg,rgba(219,59,7,1)0%,rgba(234,136,37,1)33.33%,rgba(248,213,67,1)100%)] bg-clip-text text-right font-[gilroy-light] text-transparent"
         >
-            <div
-                class="text-white flex flex-col items-center flex-4 text-4xl font-[gilroy-light]"
-            >
-                <span
-                    class="capitalize w-fit font-[gilroy-bold] min-[1718px]:text-[4rem] text-[3.5rem] xl:max-2xl:text-[3rem] leading-[4.5rem] leading-8"
-                >
-                    But to this solemn resolution I came;<br />
-                    I was free, and they should be free also.<br />
-                </span>
-                <span
-                    class="font-[gilroy-light] mt-4 text-right w-full bg-clip-text text-transparent bg-[linear-gradient(180deg,rgba(219,59,7,1)0%,rgba(234,136,37,1)33.33%,rgba(248,213,67,1)100%)]"
-                >
-                    &#8212; Harriet Tubman
-                </span>
-            </div>
-            <div
-                class="relative flex-1 aspect-[3/4] min-h-[270px] max-xl:aspect-square bg-[url('/Harriet.webp')] bg-contain bg-no-repeat bg-center saturate-0"
-            >
-            </div>
-        </section>
-        <section class="bg-white">
-            <div
-                class="w-full max-w-screen-2xl mx-auto lg:p-24 p-16 max-sm:p-6 grid md:grid-cols-[1fr_1fr] lg:gap-16 gap-8"
-            >
-                <div
-                    class="aspect-[2/3] rounded-md max-h-[1080px] mx-auto w-full bg-[url('/Teaser.webp')] bg-cover"
-                >
-                </div>
-                <div class="flex flex-col gap-4 min-w-0 my-auto">
-                    <h1 class="font-display">
-                        Agents of the Underground Railroad
-                    </h1>
-                    <p class="grid text-xs">
-                        <span><b>Rating:</b> PG-13</span>
-                        <span><b>Release Date:</b> February 2, 2024</span>
-                        <span
-                            ><b>Genre:</b> Documentary, Historical, Interview</span
-                        >
-                    </p>
-                    <p>
-                        After the events of the Revolutionary War, another
-                        generation emerges in the pages of American history.
-                        <br /><br /> This documentary series traces the stories of
-                        ordinary individuals who played extraordinary roles on the
-                        network we now know as the Underground Railroad. Follow their
-                        stories from its humble beginnings to the highest offices
-                        in America.
-                    </p>
-                    <div class="flex gap-4">
-                        <Icon name="instagram" size="32" />
-                        <Icon name="facebook" size="32" />
-                        <Icon name="email" size="32" />
-                    </div>
-                    <p>
-                        <b>Directed By</b><br />
-                        Joshua Li
-                    </p>
-                    <p>
-                        <b>Written By</b><br />
-                        Joshua Li, Jocelyn Li
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section
-            class="max-w-screen-2xl mx-auto w-full bg-black lg:p-24 p-16 max-sm:p-6 flex flex-col gap-16"
+          &#8212; Harriet Tubman
+        </span>
+      </div>
+      <div
+        class="relative aspect-[3/4] min-h-[270px] flex-1 bg-[url('/Harriet.webp')] bg-contain bg-center bg-no-repeat saturate-0 max-xl:aspect-square"
+      >
+      </div>
+    </section>
+    <section class="bg-white">
+      <div
+        class="mx-auto grid w-full max-w-screen-2xl gap-8 p-16 max-sm:p-6 md:grid-cols-[1fr_1fr] lg:gap-16 lg:p-24"
+      >
+        <div
+          class="mx-auto aspect-[2/3] max-h-[1080px] w-full rounded-md bg-[url('/Teaser.webp')] bg-cover"
         >
-            <div class="flex flex-col lg:gap-8 gap-4">
-                <h1 class="text-white font-display">Agents</h1>
-                <div
-                    class="flex md:flex-col lg:gap-8 gap-4 md:px-0 md:mx-0 px-16 -mx-16 max-sm:px-6 max-sm:-mx-6 max-md:overflow-auto snap-mandatory snap-x no-scrollbar"
-                >
-                    <div class="flex lg:gap-8 gap-4 peer/character">
-                        <Character
-                            name={"Levi Coffin"}
-                            img="/Levi_Coffin.webp"
-                        />
-                        <Character
-                            name={"Thomas Garrett"}
-                            img="/Thomas_Garrett.webp"
-                        />
-                        <Character
-                            name={"John Rankin"}
-                            img="/John_Rankin.webp"
-                        />
-                        <Character
-                            name={"Laura S. Haviland"}
-                            img="/Laura_Haviland.webp"
-                        />
-                        <Character
-                            name={"William Still"}
-                            img="/William_Still.webp"
-                        />
-                    </div>
-                    <More id="characters">
-                        <div
-                            class="flex lg:gap-8 gap-4 flex-1 md:peer-[.flex]/character:hidden"
-                        >
-                            <Character
-                                name={"Harriet Tubman"}
-                                img="/Harriet_Tubman.webp"
-                            />
-                            <Character
-                                name={"Abraham Lincoln"}
-                                img="/Abraham_Lincoln.webp"
-                            />
-                            <Character
-                                name={"Josiah Henson"}
-                                img="/Josiah_Henson.webp"
-                            />
-                            <Character
-                                name={"John Brown"}
-                                img="/John_Brown.webp"
-                            />
-                            <Character
-                                name={"Salmon P. Chase"}
-                                img="/Salmon_Chase.webp"
-                            />
-                        </div>
-                        <div
-                            class="flex lg:gap-8 gap-4 flex-1 md:peer-[.flex]/character:hidden"
-                        >
-                            <Character name={"Vestal Coffin"} />
-                            <Character
-                                name={"William H. Seward"}
-                                img="/William_Seward.webp"
-                            />
-                            <Character name={"Adam Lowry Rankin"} />
-                            <Character
-                                name={"Harriet B. Stowe"}
-                                img="/Harriet_Stowe.webp"
-                            />
-                            <Character name={"Peter Still"} />
-                        </div>
-                    </More>
-                </div>
-            </div>
-            <div class="flex flex-col lg:gap-8 gap-4">
-                <h1 class="text-white font-display">Film Locations</h1>
-                <div
-                    class="flex lg:gap-8 gap-4 overflow-auto snap-mandatory snap-x px-24 -mx-24 px-16 -mx-16 max-md:px-6 max-md:-mx-6"
-                >
-                    <Location name={"Delaware"} />
-                    <Location name={"Georgria"} />
-                    <Location name={"Illinois"} />
-                    <Location name={"Indiana"} />
-                    <Location name={"Louisiana"} />
-                    <Location name={"Maryland"} />
-                    <Location name={"Massachusetts"} />
-                    <Location name={"Michigan"} />
-                    <Location name={"Missouri"} />
-                    <Location name={"New Hampshire"} />
-                    <Location name={"North Carolina"} />
-                    <Location name={"Ohio"} />
-                    <Location name={"Ontario"} />
-                    <Location name={"Pennsylvania"} />
-                    <Location name={"Texas"} />
-                    <Location name={"Washington"} />
-                    <Location name={"Washington, DC"} />
-                    <Location name={"West Virginia"} />
-                </div>
-            </div>
-        </section>
-        <section class="bg-white">
-            <div
-                class="max-w-screen-2xl w-full mx-auto lg:p-24 p-16 max-sm:p-6 flex flex-col gap-8 bg-white"
-            >
-                <h1 class="font-display">Production Team & Crew</h1>
-                <p class="max-w-[75ch]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer sed odio sapien. Nunc accumsan lectus nec odio
-                    posuere, non vestibulum ipsum rhoncus. Cras maximus nibh
-                    eget odio varius mollis. Pellentesque non nulla cursus,
-                    sagittis nisi et, gravida metus. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit.
-                </p>
-                <fieldset class="grid gap-x-8 gap-y-12 grid-cols-6">
-                    <Team
-                        id="jessica"
-                        title="Writer | Researcher"
-                        name="Jessica Li"
-                    />
-                    <Team
-                        id="joshua"
-                        title="Director | Cinemetographer"
-                        name="Joshua Li"
-                    />
-                    <Team
-                        id="jocelyn"
-                        title="Writer | Researcher"
-                        name="Jocelyn Li"
-                    />
-                    <Team
-                        id="joseph"
-                        title="Media | Marketing"
-                        name="Joseph Li"
-                    />
-                    <Team id="john" title="Crew | Grip" name="John Li" />
-                    <Team
-                        id="jeremy"
-                        title="PR | Broadcasting"
-                        name="Jeremy Li"
-                    />
-                    <Profile
-                        bio="Jessica battled and won over childhood leukemia. She recently graduated from bible college with an undergraduate degree. She is intellectual, gifted in language and super organized. She possesses an incredible memory. She helps with the researching effort on the Underground Railroad. She is leading the research for our next topic: the Civil War. She has a big heart to help people. In her quiet way, she develops deep relationships with her friends and her students from youth groups."
-                        id="jessica"
-                        title="Writer | Researcher"
-                        img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
-                        name="Jessica Li"
-                    />
-                    <Profile
-                        bio="Joshua is mechanically gifted. He obtained formal training in auto-mechanics. But his true passion and gift lie in his ability to tell stories through film. After a year of working as a mechanic, he turned to developing that passion. He took on a year-long journey with Vancouver Film School. Through the year of training, his talent is well recognized by his teachers and peers. Joshua is also gifted in business. Outside of filming, Joshua is a Chief Scout (Eagle Scout). He is an avid mountain hiker and outdoorsman."
-                        id="joshua"
-                        title="Director | Cinemetographer"
-                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
-                        name="Joshua Li"
-                    />
-                    <Profile
-                        bio="Jocelyn is a super relator. She is gifted in language and the ability to consume large amounts of materials in a relatively short time. She is passionate about stories and American history. She turned down the opportunity to pursue an academic career and started researching and writing on underground railroad two years ago. During this time, she has read over 50 books on the topic. She wrote the first drafts of two underground railroad historical novels. Her extensive research and notes can be compiled into an excellent textbook. She is learning Spanish in her past time."
-                        id="jocelyn"
-                        title="Writer | Researcher"
-                        img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
-                        name="Jocelyn Li"
-                    />
-                    <Profile
-                        bio="Joseph is gifted with an artistic eye and drawn to colors and visual arts since he was very young. He completed a diploma in digital design and development. He developed a small video game for a competition and gained great experience and feedback. He is methodical and thoughtful. He enjoys helping with various creative and technical tasks: website-development, youtube, marketing, logo design and branding, computer upgrade, etc. He has great ambition to be great in all that he does."
-                        id="joseph"
-                        title="Media | Marketing"
-                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
-                        name="Joseph Li"
-                    />
-                    <Profile
-                        bio="John is a super helper. He is always ready to help. He has overcome a year-long battle over a fungal infection and a blood disease that almost took his life when he was only nine. Along with his competitive nature, he tirelessly analyzes any board games he plays to figure out the best path to win. He will play the important supportive role as a film crewman. John is an avid archer. His dream is to represent the USA in the Olympic archery competition."
-                        id="john"
-                        title="Crew | Grip"
-                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
-                        name="John Li"
-                    />
-                    <Profile
-                        bio="Jeremy is finishing his first year in Journalism School. His passion is to communicate and to bring the truth to light. He is passionate about protecting freedom in America. He naturally wants to do what is right. Even though he is the youngest, he often is the one to speak up for what is right. He is the face and lead of the Elwin Studios YouTube Channel. He will be the voice and interviewer for the documentary. He is gifted in language and has a bright mind. He will take part in the research of the American Constitution in preparation for future project."
-                        id="jeremy"
-                        title="PR | Broadcasting"
-                        img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
-                        name="Jeremy Li"
-                    />
-                </fieldset>
-            </div>
-        </section>
-        <section
-            class="max-w-screen-2xl mx-auto w-full bg-black lg:p-24 p-16 max-sm:p-6 flex items-center gap-6 max-md:flex-col-reverse max-md:gap-10"
+        </div>
+        <div class="my-auto flex min-w-0 flex-col gap-4">
+          <h1 class="font-display">Agents of the Underground Railroad</h1>
+          <p class="grid text-xs">
+            <span><b>Rating:</b> PG-13</span>
+            <span><b>Release Date:</b> February 2, 2024</span>
+            <span><b>Genre:</b> Documentary Series, Historical, Interview</span>
+          </p>
+          <p class="xl:text-lg">
+            After the events of the Revolutionary War, another generation
+            emerges in the pages of American history.
+            <br /><br /> This documentary series traces the stories of ordinary individuals
+            who played extraordinary roles on the network we now know as the Underground
+            Railroad. Follow their stories from its humble beginnings to the highest
+            offices in America.
+          </p>
+          <div class="flex gap-4">
+            <Icon
+              name="youTube"
+              size="32"
+              href="https://www.youtube.com/@ElwinStudios"
+            />
+            <Icon
+              name="instagram"
+              size="32"
+              href="https://www.instagram.com/agentsoftheundergroundrailroad/"
+            />
+            <Icon
+              name="facebook"
+              size="32"
+              href="https://www.facebook.com/people/Agents-of-the-Underground-Railroad/100091754644195/"
+            />
+            <Icon
+              name="email"
+              size="32"
+              href="mailto: elwintechnologies@gmail.com"
+            />
+          </div>
+          <p>
+            <b>Directed By</b><br />
+            Joshua Li
+          </p>
+          <p>
+            <b>Written By</b><br />
+            Joshua Li, Jocelyn Li
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="mx-auto flex w-full max-w-screen-2xl flex-col gap-16 p-16 max-sm:p-6 lg:p-24"
+    >
+      <div class="flex flex-col gap-4 lg:gap-8">
+        <h1 class="font-display text-white">Agents</h1>
+        <div
+          class="-mx-16 flex snap-x snap-mandatory grid-cols-5 gap-4 px-16 no-scrollbar max-md:overflow-auto max-sm:-mx-6 max-sm:px-6 md:mx-0 md:grid md:px-0 lg:gap-8"
         >
-            <div class="flex flex-col gap-6 max-w-[75ch] min-w-[144px]">
-                <div>
-                    <h1 class="text-white font-display">Across America!</h1>
-                    <p class="text-white text-2xl font-[gilroy-regular]">
-                        June - August 2023
-                    </p>
-                </div>
-                <p class="text-white">
-                    We’re taking our curiosity across America, following the
-                    lives of Underground Railroad Operators. The places they
-                    lived. The people they met. The reasons for their burning
-                    desire to act on their convictions. We will walk where they
-                    walked, eat where they ate, and talk to the modern experts
-                    of these; the Agents of the Underground Railroad
-                </p>
-            </div>
-            <div class="lg:flex hidden flex-col items-center mx-auto scale-1">
-                <Icon
-                    name="pin"
-                    size="400"
-                    style="fill-[#DB3B07] -mb-48 z-10"
-                />
-                <Icon name="map" size="300" style="fill-white rotate-[30deg]" />
-            </div>
-            <div class="lg:hidden flex flex-col items-center mx-auto scale-1">
-                <Icon
-                    name="pin"
-                    size="200"
-                    style="fill-[#DB3B07] -mb-[6rem] z-10"
-                />
-                <Icon name="map" size="150" style="fill-white rotate-[30deg]" />
-            </div>
-        </section>
-        <section
-            class="w-full aspect-video bg-gradient-to-t from-[#EA8825] to-[#F8D543] lg:p-24 p-16 flex justify-center items-center lg:gap-16 gap-8 md:min-h-[500px] max-md:flex-col"
+          <Character name={"Levi Coffin"} img="/Levi_Coffin.webp" />
+          <Character name={"Thomas Garrett"} img="/Thomas_Garrett.webp" />
+          <Character name={"John Rankin"} img="/John_Rankin.webp" />
+          <Character name={"Laura S. Haviland"} img="/Laura_Haviland.webp" />
+          <Character name={"William Still"} img="/William_Still.webp" />
+          <Character name={"Harriet Tubman"} img="/Harriet_Tubman.webp" />
+          <Character name={"Abraham Lincoln"} img="/Abraham_Lincoln.webp" />
+          <Character name={"Josiah Henson"} img="/Josiah_Henson.webp" />
+          <Character name={"John Brown"} img="/John_Brown.webp" />
+          <Character name={"Salmon P. Chase"} img="/Salmon_Chase.webp" />
+          <Character name={"Vestal Coffin"} />
+          <Character name={"William H. Seward"} img="/William_Seward.webp" />
+          <Character name={"Adam Lowry Rankin"} />
+          <Character name={"Harriet B. Stowe"} img="/Harriet_Stowe.webp" />
+          <Character name={"Peter Still"} />
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 lg:gap-8">
+        <h1 class="font-display text-white">Locations</h1>
+        <div
+          class="-mx-16 flex snap-x snap-mandatory gap-4 overflow-auto px-16 no-scrollbar max-sm:-mx-6 max-sm:px-6 lg:-mx-24 lg:gap-8 lg:px-24"
         >
-            <div class="max-w-[65ch] flex flex-col gap-4">
-                <h1 class="font-display">Follow Our Journey!</h1>
-                <p class="text-xl">
-                    Follow us on social media to get our on-the-go updates and
-                    behind-the-scenes footage as we explore the “Agents of the
-                    Underground Railroad.”
-                    <br /><br />
-                    elwintechnologies@gmail.com
-                    <div class="lg:flex hidden gap-8">
-                        <Icon name="instagram" size="96" />
-                        <Icon name="facebook" size="96" />
-                        <Icon name="email" size="96" />
-                    </div>
-                    <div class="lg:hidden flex gap-8">
-                        <Icon name="instagram" size="64" />
-                        <Icon name="facebook" size="64" />
-                        <Icon name="email" size="64" />
-                    </div>
-                </p>
-            </div>
-            <div
-                class="border-8 border-black rounded-[2rem] h-full aspect-[375/812] bg-white max-md:w-full"
-            >
-                <div id="instafeed"></div>
-            </div>
-        </section>
-        <footer class="flex justify-center p-8 bg-white">
-            <a
-                class="flex text-2xl font-display font-bold"
-                href="https://www.youtube.com/channel/UCcJ0ceX0GR3RUR_Ynfzx4QQ/"
-                target="_blank"
-            >
-                <h2 class="font-[gilroy-heavy]">elwin</h2>&nbsp;
-                <h2 class="font-[gilroy-regular]">studios</h2>&nbsp;
-                <Icon name="youTube" size="40" style="fill-[#DB3B07]" />
-            </a>
-        </footer>
-    </main>
+          <Location name={"Delaware"} />
+          <Location name={"Georgria"} />
+          <Location name={"Illinois"} />
+          <Location name={"Indiana"} />
+          <Location name={"Louisiana"} />
+          <Location name={"Maryland"} />
+          <Location name={"Massachusetts"} />
+          <Location name={"Michigan"} />
+          <Location name={"Missouri"} />
+          <Location name={"New Hampshire"} />
+          <Location name={"North Carolina"} />
+          <Location name={"Ohio"} />
+          <Location name={"Ontario"} />
+          <Location name={"Pennsylvania"} />
+          <Location name={"Texas"} />
+          <Location name={"Washington"} />
+          <Location name={"Washington, DC"} />
+          <Location name={"West Virginia"} />
+        </div>
+      </div>
+    </section>
+  </main>
+  <section class="bg-white">
+    <div
+      class="mx-auto flex w-full max-w-screen-2xl flex-col gap-8 bg-white p-16 max-sm:p-6 lg:p-24"
+    >
+      <h1 class="font-display">Meet Our Team</h1>
+      <p class="-mt-4 max-w-[75ch] xl:text-lg">
+        At Elwin Studios, we create educational materials that are fun, factual,
+        and inspiring. We are a team so tight, it’s like we are a family…wait,
+        we are! We share the same passion for freedom. Each of us brings
+        different talents and skills to the project. Together, we are making a
+        never-seen-before documentary series on the heroes and heroines of the
+        Underground Railroad.
+      </p>
+      <fieldset class="grid grid-cols-6 gap-x-8 gap-y-12">
+        <Team id="jessica" title="Writer | Researcher" name="Jessica Li" />
+        <Team id="joshua" title="Director | Cinemetographer" name="Joshua Li" />
+        <Team id="jocelyn" title="Writer | Researcher" name="Jocelyn Li" />
+        <Team id="joseph" title="Media | Marketing" name="Joseph Li" />
+        <Team id="john" title="Crew | Grip" name="John Li" />
+        <Team id="jeremy" title="PR | Broadcasting" name="Jeremy Li" />
+        <Profile
+          bio="Jessica battled and won over childhood leukemia. She recently graduated from bible college with an undergraduate degree. She is intellectual, gifted in language and super organized. She possesses an incredible memory. She helps with the researching effort on the Underground Railroad. She is leading the research for our next topic: the Civil War. She has a big heart to help people. In her quiet way, she develops deep relationships with her friends and her students from youth groups."
+          id="jessica"
+          title="Writer | Researcher"
+          img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
+          name="Jessica Li"
+        />
+        <Profile
+          bio="Joshua is mechanically gifted. He obtained formal training in auto-mechanics. But his true passion and gift lie in his ability to tell stories through film. After a year of working as a mechanic, he turned to developing that passion. He took on a year-long journey with Vancouver Film School. Through the year of training, his talent is well recognized by his teachers and peers. Joshua is also gifted in business. Outside of filming, Joshua is a Chief Scout (Eagle Scout). He is an avid mountain hiker and outdoorsman."
+          id="joshua"
+          title="Director | Cinemetographer"
+          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          name="Joshua Li"
+        />
+        <Profile
+          bio="Jocelyn is a super relator. She is gifted in language and the ability to consume large amounts of materials in a relatively short time. She is passionate about stories and American history. She turned down the opportunity to pursue an academic career and started researching and writing on underground railroad two years ago. During this time, she has read over 50 books on the topic. She wrote the first drafts of two underground railroad historical novels. Her extensive research and notes can be compiled into an excellent textbook. She is learning Spanish in her past time."
+          id="jocelyn"
+          title="Writer | Researcher"
+          img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
+          name="Jocelyn Li"
+        />
+        <Profile
+          bio="Joseph is gifted with an artistic eye and drawn to colors and visual arts since he was very young. He completed a diploma in digital design and development. He developed a small video game for a competition and gained great experience and feedback. He is methodical and thoughtful. He enjoys helping with various creative and technical tasks: website-development, youtube, marketing, logo design and branding, computer upgrade, etc. He has great ambition to be great in all that he does."
+          id="joseph"
+          title="Media | Marketing"
+          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          name="Joseph Li"
+        />
+        <Profile
+          bio="John is a super helper. He is always ready to help. He has overcome a year-long battle over a fungal infection and a blood disease that almost took his life when he was only nine. Along with his competitive nature, he tirelessly analyzes any board games he plays to figure out the best path to win. He will play the important supportive role as a film crewman. John is an avid archer. His dream is to represent the USA in the Olympic archery competition."
+          id="john"
+          title="Crew | Grip"
+          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          name="John Li"
+        />
+        <Profile
+          bio="Jeremy is finishing his first year in Journalism School. His passion is to communicate and to bring the truth to light. He is passionate about protecting freedom in America. He naturally wants to do what is right. Even though he is the youngest, he often is the one to speak up for what is right. He is the face and lead of the Elwin Studios YouTube Channel. He will be the voice and interviewer for the documentary. He is gifted in language and has a bright mind. He will take part in the research of the American Constitution in preparation for future project."
+          id="jeremy"
+          title="PR | Broadcasting"
+          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          name="Jeremy Li"
+        />
+      </fieldset>
+    </div>
+  </section>
+  <section
+    class="mx-auto flex w-full max-w-screen-2xl items-center gap-6 p-16 max-md:flex-col-reverse max-md:gap-10 max-sm:p-6 lg:p-24"
+  >
+    <div class="flex min-w-[144px] max-w-[75ch] flex-col gap-6">
+      <div>
+        <h1 class="font-display text-white">About Our Trip</h1>
+        <p class="font-[gilroy-regular] text-2xl text-white">
+          June - August 2023
+        </p>
+      </div>
+      <p class="text-white xl:text-lg">
+        We’re taking our curiosity across America, following the lives of
+        Underground Railroad Operators. The places they lived. The people they
+        met. The reasons for their burning desire to act on their convictions.
+        We will walk where they walked, eat where they ate, and talk to the
+        modern experts of these: The Agents of the Underground Railroad. <br
+        /><br />Check out the Elwin Studios Youtube channel below where we’ll be
+        posting the behind-the-scenes footage of our tour.
+      </p>
+    </div>
+    <div class="scale-1 mx-auto hidden flex-col items-center lg:flex">
+      <Icon
+        name="pin"
+        size="400"
+        style="fill-[#DB3B07]"
+        className="-mb-48 z-10"
+      />
+      <Icon name="map" size="300" style="fill-white rotate-[30deg]" />
+    </div>
+    <div class="scale-1 mx-auto flex flex-col items-center lg:hidden">
+      <Icon
+        name="pin"
+        size="200"
+        style="fill-[#DB3B07]"
+        className="-mb-[6rem] z-10"
+      />
+      <Icon name="map" size="150" style="fill-white rotate-[30deg]" />
+    </div>
+  </section>
+  <section
+    class="flex max-lg:flex-col aspect-video w-full items-center justify-center gap-8 bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-16 max-md:flex-col lg:gap-16 lg:p-24"
+  >
+    <div class="flex max-w-[65ch] flex-col gap-4">
+      <h1 class="font-display">Join us on Social Media!</h1>
+      <p class="text-xl">
+        Follow us on YouTube, Instagram, and Facebook, for special updates on
+        the making of Agents of the Underground Railroad.
+        <br /><br />
+        <a class="text-xl" href="mailto: elwintechnologies@gmail.com">
+          elwintechnologies@gmail.com
+        </a>
+        <div class="flex gap-6">
+          <Icon
+            name="youTube"
+            size="64"
+            href="https://www.youtube.com/@ElwinStudios"
+          />
+          <Icon
+            name="instagram"
+            size="64"
+            href="https://www.instagram.com/agentsoftheundergroundrailroad/"
+          />
+          <Icon
+            name="facebook"
+            size="64"
+            href="https://www.facebook.com/people/Agents-of-the-Underground-Railroad/100091754644195/"
+          />
+          <Icon
+            name="email"
+            size="64"
+            href="mailto: elwintechnologies@gmail.com"
+          />
+        </div>
+      </p>
+    </div>
+    <Instagram client:idle />
+  </section>
+  <footer class="flex justify-center bg-white p-8">
+    <a
+      class="flex font-display text-2xl font-bold"
+      href="https://www.youtube.com/@ElwinStudios"
+      target="_blank"
+    >
+      <h2 class="font-[gilroy-heavy]">elwin</h2>&nbsp;
+      <h2 class="font-[gilroy-regular]">studios</h2>&nbsp;
+      <Icon name="youTube" size="40" style="fill-[#DB3B07]" />
+    </a>
+  </footer>
 </Layout>
-
-<script type="text/javascript">
-    var feed = new Instafeed({
-        accessToken: "your-token",
-    });
-    feed.run();
-</script>

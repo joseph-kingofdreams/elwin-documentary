@@ -14,7 +14,10 @@ const { name, img } = Astro.props;
         "flex flex-col gap-2 flex-1 md:w-auto max-md:min-w-[calc(50vw-80px)] max-sm:min-w-[calc(95vw-80px)] snap-start max-sm:snap-center scroll-mx-16 max-sm:scroll-mx-6"
     )}
 >
-    <div class="bg-orange-500 aspect-[27/40] rounded-md overflow-hidden">
+    <div
+        class={"aspect-[27/40] rounded-md overflow-hidden scale-100 hover:scale-105 transition-all duration-500 " +
+            (img ? "" : "bg-orange-500")}
+    >
         <img src={img} alt="" />
     </div>
     <p class="text-white text-semibold">{name}</p>

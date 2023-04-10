@@ -16,6 +16,16 @@ const input = {
     john: "peer/john",
     jeremy: "peer/jeremy",
 };
+
+// const output = {
+//     jessica: "peer-checked/jessica:bg-gradient-to-tr ",
+//     joshua: "peer-checked/joshua:bg-gradient-to-tr ",
+//     jocelyn: "peer-checked/jocelyn:bg-gradient-to-tr ",
+//     joseph: "peer-checked/joseph:bg-gradient-to-tr ",
+//     john: "peer-checked/john:bg-gradient-to-tr ",
+//     jeremy: "peer-checked/jeremy:bg-gradient-to-tr ",
+// };
+// "from-[#F8D543] to-[#EA8825] "
 ---
 
 <input
@@ -25,12 +35,16 @@ const input = {
     name="team"
     checked={id === "jessica" ? "checked" : null}
 />
+<div
+    class="-ml-full min-w-32 aspect-square rounded-full cursor-pointer scale-100 hover:scale-105 transition-all duration-500 p-1"
+>
+</div>
 <label
     for={id}
-    class="lg:flex hidden flex-col justify-start gap-2 flex-1 col-span-1"
+    class="z-10 lg:flex hidden flex-col justify-start gap-2 flex-1 col-span-1"
 >
     <div
-        class="bg-neutral-500 min-w-32 aspect-square rounded-full cursor-pointer scale-100 hover:scale-105 transition-all duration-500"
+        class="bg-neutral-500 aspect-square rounded-full h-full w-full border-4 border-white"
     >
     </div>
     <div>

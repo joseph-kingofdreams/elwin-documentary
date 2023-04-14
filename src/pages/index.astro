@@ -7,6 +7,8 @@ import Profile from "../components/Profile.astro";
 import Team from "../components/Team.astro";
 import Instagram from "../components/Instagram";
 import Hero from "../sections/Hero";
+import axios from "axios";
+import { schedule } from "node-cron";
 ---
 
 <Layout
@@ -82,7 +84,7 @@ import Hero from "../sections/Hero";
             <Icon
               name="email"
               size="32"
-              href="mailto: elwintechnologies@gmail.com"
+              href="mailto: info@agentsoftheundergroundrailroad.com"
             />
           </div>
           <p>
@@ -153,9 +155,9 @@ import Hero from "../sections/Hero";
     >
       <h1 class="font-display">Meet Our Team</h1>
       <p class="-mt-4 max-w-[75ch] xl:text-lg">
-        At Elwin Studios, we create educational materials that are fun, factual,
-        and inspiring. We are a team so tight, it’s like we' re family…wait, we
-        are! We share the same passion for freedom. Each of us brings different
+        At Elwin Studios, we create educational content that is fun, factual,
+        and inspiring. We are a team so tight, it’s like we're family…wait, we
+        are! We share the same passion for freedom. Each of us bring different
         talents and skills to the project. Together, we are making a
         never-seen-before documentary series on the heroes and heroines of the
         Underground Railroad.
@@ -259,13 +261,16 @@ import Hero from "../sections/Hero";
     class="flex max-lg:flex-col aspect-video w-full items-center justify-center gap-8 bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-16 max-md:flex-col lg:gap-16 lg:p-24"
   >
     <div class="flex max-w-[65ch] flex-col gap-4">
-      <h1 class="font-display">Join Us On Social Media!</h1>
+      <h1 class="font-display">Join Us on Social Media!</h1>
       <p class="text-xl">
         Follow us on YouTube, Instagram, and Facebook for special updates on the
         making of Agents of the Underground Railroad.
         <br /><br />
-        <a class="text-xl" href="mailto: elwintechnologies@gmail.com">
-          elwintechnologies@gmail.com
+        <a
+          class="text-xl"
+          href="mailto: info@agentsoftheundergroundrailroad.com"
+        >
+          info@agentsoftheundergroundrailroad.com
         </a>
         <div class="flex gap-6">
           <Icon
@@ -286,12 +291,28 @@ import Hero from "../sections/Hero";
           <Icon
             name="email"
             size="64"
-            href="mailto: elwintechnologies@gmail.com"
+            href="mailto: info@agentsoftheundergroundrailroad.com"
           />
         </div>
       </p>
     </div>
-    <Instagram client:idle />
+    <script is:inline>
+      // This function retrieves a new token and updates the environment variable
+      function refreshInstagramToken() {
+        axios
+          .get(
+            `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${process.env.INSTAGRAM_TOKEN}`
+          )
+          .then((response) => {
+            import.meta.env.INSTAGRAM_TOKEN = response.data.access_token;
+            console.log(response.data.access_token);
+          });
+      }
+
+      // Schedule the token refresh task to run every 59 days
+      schedule("0 0 */59 * * *", refreshInstagramToken);
+    </script>
+    <Instagram client:idle token={import.meta.env.INSTAGRAM_TOKEN} />
   </section>
   <footer class="flex justify-center bg-white p-8">
     <a

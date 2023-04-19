@@ -1,17 +1,21 @@
 ---
 export interface Props {
+  id: string;
   name: string;
   img?: string;
 }
 
-const { name, img } = Astro.props;
+const { id, name, img } = Astro.props;
 ---
 
-<div
-  class="flex flex-col gap-2 flex-1 min-w-[calc(33vw-80px)] max-md:min-w-[calc(50vw-80px)] max-sm:min-w-[calc(95vw-80px)] lg:scroll-mx-24 scroll-mx-16 max-sm:scroll-mx-6 md:[&:nth-child(3n+1)]:snap-start max-md:[&:nth-child(odd)]:snap-start max-sm:snap-center"
+<a
+  id={id}
+  class="flex flex-col gap-2 flex-1 min-w-[425px] max-2xl:min-w-[calc(33vw-80px)] max-md:min-w-[calc(50vw-80px)] max-sm:min-w-[calc(95vw-80px)] lg:scroll-mx-24 scroll-mx-16 max-sm:scroll-mx-6 md:[&:nth-child(3n+1)]:snap-start max-md:[&:nth-child(odd)]:snap-start max-sm:snap-center"
 >
-  <div class="bg-orange-500 min-w-52 aspect-video rounded-md overflow-hidden scale-100 hover:scale-105 transition-all duration-500">
+  <div
+    class="min-w-52 aspect-video rounded-md overflow-hidden scale-100 hover:scale-105 transition-all duration-500 w-fit"
+  >
     <img src={img} alt="" />
   </div>
   <p class="text-white text-semibold">{name}</p>
-</div>
+</a>

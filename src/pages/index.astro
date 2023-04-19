@@ -7,8 +7,6 @@ import Profile from "../components/Profile.astro";
 import Team from "../components/Team.astro";
 import Instagram from "../components/Instagram";
 import Hero from "../sections/Hero";
-import axios from "axios";
-import { schedule } from "node-cron";
 ---
 
 <Layout
@@ -39,65 +37,68 @@ import { schedule } from "node-cron";
       >
       </div>
     </section>
-    <section class="bg-white">
+  </main>
+  <section class="bg-white">
+    <div
+      class="mx-auto grid w-full max-w-screen-2xl gap-8 p-16 max-sm:p-6 md:grid-cols-[1fr_1fr] lg:gap-16 lg:p-24"
+    >
       <div
-        class="mx-auto grid w-full max-w-screen-2xl gap-8 p-16 max-sm:p-6 md:grid-cols-[1fr_1fr] lg:gap-16 lg:p-24"
+        class="mx-auto aspect-[2/3] max-h-[1080px] w-full rounded-md bg-[url('/Teaser.webp')] bg-cover"
       >
-        <div
-          class="mx-auto aspect-[2/3] max-h-[1080px] w-full rounded-md bg-[url('/Teaser.webp')] bg-cover"
-        >
-        </div>
-        <div class="my-auto flex min-w-0 flex-col gap-4">
-          <h1 class="font-display">Agents of the Underground Railroad</h1>
-          <p class="grid text-xs">
-            <!-- <span><b>Rating:</b> PG-13</span> -->
-            <span><b>Release Date:</b> Spring 2024</span>
-            <span
-              ><b>Genre:</b> Documentary Series, Historical, Inspirational</span
-            >
-          </p>
-          <p class="xl:text-lg">
-            After the events of the Revolutionary War, another generation of
-            heroes emerge from the pages of American history.
-            <br /><br /> This documentary series traces the stories of ordinary people
-            who played extraordinary roles on the network we now know as the Underground
-            Railroad. From the men and women who aided fugitives on the run to those
-            who ended slavery for all of America, follow the stories of the Agents
-            who helped shape these United States.
-          </p>
-          <div class="flex gap-4">
-            <Icon
-              name="youTube"
-              size="32"
-              href="https://www.youtube.com/@ElwinStudios"
-            />
-            <Icon
-              name="instagram"
-              size="32"
-              href="https://www.instagram.com/agentsoftheundergroundrailroad/"
-            />
-            <Icon
-              name="facebook"
-              size="32"
-              href="https://www.facebook.com/people/Agents-of-the-Underground-Railroad/100091754644195/"
-            />
-            <Icon
-              name="email"
-              size="32"
-              href="mailto: info@agentsoftheundergroundrailroad.com"
-            />
-          </div>
-          <p>
-            <b>Directed By</b><br />
-            Joshua Li
-          </p>
-          <p>
-            <b>Written By</b><br />
-            Joshua Li, Jocelyn Li
-          </p>
-        </div>
       </div>
-    </section>
+      <div class="my-auto flex min-w-0 flex-col gap-4">
+        <h1 class="font-display">Agents of the Underground Railroad</h1>
+        <p class="grid text-xs">
+          <!-- <span><b>Rating:</b> PG-13</span> -->
+          <span><b>Release Date:</b> Spring 2024</span>
+          <span
+            ><b>Genre:</b> Documentary Series, Historical, Inspirational</span
+          >
+        </p>
+        <p class="xl:text-lg">
+          After the events of the Revolutionary War, another generation of
+          heroes emerged from the pages of American history.
+          <br /><br /> This documentary series traces the stories of ordinary people
+          who played extraordinary roles on the network we now know as the Underground
+          Railroad. From William Still who aided fugitives on the run to Abraham
+          Lincoln who ended slavery for all of America; every story of these incredible
+          heroes was filled with purpose, sacrifice, and accomplishment. Follow us
+          on this amazing journey to experience the lives of these American heroes.
+        </p>
+        <div class="flex gap-4">
+          <Icon
+            name="youTube"
+            size="32"
+            href="https://www.youtube.com/@ElwinStudios"
+          />
+          <Icon
+            name="instagram"
+            size="32"
+            href="https://www.instagram.com/agentsoftheundergroundrailroad/"
+          />
+          <Icon
+            name="facebook"
+            size="32"
+            href="https://www.facebook.com/people/Agents-of-the-Underground-Railroad/100091754644195/"
+          />
+          <Icon
+            name="email"
+            size="32"
+            href="mailto: info@agentsoftheundergroundrailroad.com"
+          />
+        </div>
+        <p>
+          <b>Directed By</b><br />
+          Joshua Li
+        </p>
+        <p>
+          <b>Written By</b><br />
+          Joshua Li, Jocelyn Li
+        </p>
+      </div>
+    </div>
+  </section>
+  <main class="mx-auto flex max-w-[1920px] flex-col">
     <section
       class="mx-auto flex w-full max-w-screen-2xl flex-col gap-16 p-16 max-sm:p-6 lg:p-24"
     >
@@ -116,6 +117,7 @@ import { schedule } from "node-cron";
           <Character name={"Salmon P. Chase"} img="/Salmon_Chase.webp" />
           <Character name={"Harriet Tubman"} img="/Harriet_Tubman.webp" />
           <Character name={"Abraham Lincoln"} img="/Abraham_Lincoln.webp" />
+          <Character name={"Fredrick Douglas"} img="/Fredrick_Douglas.webp" />
           <Character name={"Harriet B. Stowe"} img="/Harriet_Stowe.webp" />
           <Character name={"William H. Seward"} img="/William_Seward.webp" />
           <Character name={"Vestal Coffin"} />
@@ -126,25 +128,46 @@ import { schedule } from "node-cron";
       <div class="flex flex-col">
         <h1 class="font-display text-white">Locations</h1>
         <div
+          id="locations"
           class="-mx-16 flex snap-x snap-mandatory gap-4 overflow-auto px-16 no-scrollbar max-sm:-mx-6 max-sm:px-6 lg:-mx-24 lg:gap-8 lg:px-24 pt-4 lg:pt-8"
         >
-          <Location name={"Delaware"} img="/Delaware.webp" />
-          <Location name={"Georgia"} img="/Georgia.webp" />
-          <Location name={"Illinois"} img="/Illinois.webp" />
-          <Location name={"Indiana"} img="/Indiana.webp" />
-          <Location name={"Louisiana"} img="/Louisiana.webp" />
-          <Location name={"Maryland"} img="/Maryland.webp" />
-          <Location name={"Massachusetts"} img="/Massachusetts.webp" />
-          <Location name={"Michigan"} img="/Michigan.webp" />
-          <Location name={"Missouri"} img="/Missouri.webp" />
-          <Location name={"New Hampshire"} img="/New_Hampshire.webp" />
-          <Location name={"North Carolina"} img="/North_Carolina.webp" />
-          <Location name={"Ohio"} img="/Ohio.webp" />
-          <Location name={"Ontario"} img="/Ontario.webp" />
-          <Location name={"Pennsylvania"} img="/Pennsylvania.webp" />
-          <Location name={"Texas"} img="/Texas.webp" />
-          <Location name={"Washington, DC"} img="/DC.webp" />
-          <Location name={"West Virginia"} img="/West_Virginia.webp" />
+          <Location id="Delaware" name={"Delaware"} img="/Delaware.webp" />
+          <Location id="Georgia" name={"Georgia"} img="/Georgia.webp" />
+          <Location id="Illinois" name={"Illinois"} img="/Illinois.webp" />
+          <Location id="Indiana" name={"Indiana"} img="/Indiana.webp" />
+          <Location id="Louisiana" name={"Louisiana"} img="/Louisiana.webp" />
+          <Location id="Maryland" name={"Maryland"} img="/Maryland.webp" />
+          <Location
+            id="Massachusetts"
+            name={"Massachusetts"}
+            img="/Massachusetts.webp"
+          />
+          <Location id="Michigan" name={"Michigan"} img="/Michigan.webp" />
+          <Location id="Missouri" name={"Missouri"} img="/Missouri.webp" />
+          <Location
+            id="NewHampshire"
+            name={"New Hampshire"}
+            img="/New_Hampshire.webp"
+          />
+          <Location
+            id="North Carolina"
+            name={"North Carolina"}
+            img="/North_Carolina.webp"
+          />
+          <Location id="Ohio" name={"Ohio"} img="/Ohio.webp" />
+          <Location id="Ontario" name={"Ontario"} img="/Ontario.webp" />
+          <Location
+            id="Pennsylvania"
+            name={"Pennsylvania"}
+            img="/Pennsylvania.webp"
+          />
+          <Location id="Texas" name={"Texas"} img="/Texas.webp" />
+          <Location id="WashingtonDC" name={"Washington, DC"} img="/DC.webp" />
+          <Location
+            id="WestVirginia"
+            name={"West Virginia"}
+            img="/West_Virginia.webp"
+          />
         </div>
       </div>
     </section>
@@ -162,7 +185,7 @@ import { schedule } from "node-cron";
         never-seen-before documentary series on the heroes and heroines of the
         Underground Railroad.
       </p>
-      <fieldset class="grid grid-cols-6 gap-x-8 gap-y-12">
+      <fieldset class="grid grid-cols-6 gap-x-4 gap-y-12">
         <Team
           id="jessica"
           title="Production Coordinator | Researcher"
@@ -177,42 +200,42 @@ import { schedule } from "node-cron";
           bio="Jessica battled and won over childhood leukemia. She recently graduated from bible college with an undergraduate degree. She is intellectual, gifted in language and super organized. She possesses an incredible memory. She helps with the researching effort on the Underground Railroad. She is leading the research for our next topic: the Civil War. She has a big heart to help people. In her quiet way, she develops deep relationships with her friends and her students from youth groups."
           id="jessica"
           title="Production Coordinator | Researcher"
-          img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
+          img="/jessica.webp"
           name="Jessica Li"
         />
         <Profile
           bio="Joshua is mechanically gifted. He obtained formal training in auto-mechanics. But his true passion and gift lies in his ability to tell stories through film. After a year of working as a mechanic, he turned to developing that passion. He took on a year-long journey with Vancouver Film School. Through the year of training, his talent is well recognized by his teachers and peers. Joshua is also gifted in business. Outside of filming, he is a Chief Scout (Eagle Scout), an avid hiker, and outdoorsman."
           id="joshua"
           title="Director | Cinemetographer"
-          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          img="/joshua.webp"
           name="Joshua Li"
         />
         <Profile
           bio="Jocelyn is a super relator. She is gifted in language and the ability to consume large amounts of material in a relatively short time. She is passionate about stories and American history. Two years ago, she started researching and writing on the Underground Railroad. During this time, she has read over 50 books on the topic. She wrote the first drafts of two Underground Railroad historical novels. Her extensive research and notes can be compiled into an excellent textbook. She is learning Spanish in her past time."
           id="jocelyn"
           title="Writer | Researcher"
-          img="https://i.pinimg.com/originals/ab/8a/f2/ab8af2d489e3e18d9f4ddd2480d03b6c.jpg"
+          img="/jocelyn.webp"
           name="Jocelyn Li"
         />
         <Profile
           bio="Joseph is gifted with an artistic eye and has been drawn to colors and visual arts since he was very young. He completed a diploma in digital design and development. He developed a small video game for a competition and gained great experience and feedback. He is methodical and thoughtful. He enjoys helping with various creative and technical tasks: website-development, youtube, marketing, logo design and branding, computer upgrade, etc. He has great ambition to be great in all that he does."
           id="joseph"
           title="Media | Marketing"
-          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          img="/joseph.webp"
           name="Joseph Li"
         />
         <Profile
           bio="John is a super helper. He overcame a year-long battle over a fungal infection and a blood disease that almost took his life when he was only eight. Along with his competitive nature, he tirelessly analyzes any board games he plays to figure out the best path to win. He will play the important supportive role as production crew. John is an avid archer. His dream is to represent the USA in the Olympic archery competition."
           id="john"
           title="Production Crew"
-          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          img="/john.webp"
           name="John Li"
         />
         <Profile
           bio="Jeremy is finishing his first year in Journalism School. He is gifted in language and has a bright mind. His passion is to communicate and bring the truth to light. He has a heart for protecting freedom in America. Even though he is the youngest, he often is the one to speak up for what is right. He is the face of the Elwin Studios YouTube Channel and will be the voice and interviewer for the documentary. In preparation for a future project, he will take part in the research of the American Constitution."
           id="jeremy"
           title="Public Relations | Broadcasting"
-          img="https://media.istockphoto.com/id/1028373274/photo/lighten-portrait-silhouette-of-a-human-head-in-the-dark-background.jpg?s=170667a&w=0&k=20&c=xyxdjyBKe8Ou2PTmm2jxifRTZN8sREwSzQX7e2t8nBo="
+          img="/jeremy.webp"
           name="Jeremy Li"
         />
       </fieldset>
@@ -257,62 +280,48 @@ import { schedule } from "node-cron";
       <Icon name="map" size="150" style="fill-white rotate-[30deg]" />
     </div>
   </section>
-  <section
-    class="flex max-lg:flex-col aspect-video w-full items-center justify-center gap-8 bg-gradient-to-t from-[#EA8825] to-[#F8D543] p-16 max-md:flex-col lg:gap-16 lg:p-24"
-  >
-    <div class="flex max-w-[65ch] flex-col gap-4">
-      <h1 class="font-display">Join Us on Social Media!</h1>
-      <p class="text-xl">
-        Follow us on YouTube, Instagram, and Facebook for special updates on the
-        making of Agents of the Underground Railroad.
-        <br /><br />
-        <a
-          class="text-xl"
-          href="mailto: info@agentsoftheundergroundrailroad.com"
-        >
-          info@agentsoftheundergroundrailroad.com
-        </a>
-        <div class="flex gap-6">
-          <Icon
-            name="youTube"
-            size="64"
-            href="https://www.youtube.com/@ElwinStudios"
-          />
-          <Icon
-            name="instagram"
-            size="64"
-            href="https://www.instagram.com/agentsoftheundergroundrailroad/"
-          />
-          <Icon
-            name="facebook"
-            size="64"
-            href="https://www.facebook.com/people/Agents-of-the-Underground-Railroad/100091754644195/"
-          />
-          <Icon
-            name="email"
-            size="64"
+  <section class="bg-gradient-to-t from-[#EA8825] to-[#F8D543]">
+    <div
+      class="flex max-lg:flex-col aspect-video items-center justify-center gap-8 p-16 max-md:flex-col lg:gap-16 lg:p-24 max-w-screen-2xl mx-auto"
+    >
+      <div class="flex max-w-[65ch] flex-col gap-4">
+        <h1 class="font-display">Join Us on Social Media!</h1>
+        <p class="text-xl">
+          Follow us on YouTube, Instagram, and Facebook for special updates on
+          the making of Agents of the Underground Railroad.
+          <br /><br />
+          <a
+            class="text-xl"
             href="mailto: info@agentsoftheundergroundrailroad.com"
-          />
-        </div>
-      </p>
+          >
+            info@agentsoftheundergroundrailroad.com
+          </a>
+          <div class="flex gap-6">
+            <Icon
+              name="youTube"
+              size="64"
+              href="https://www.youtube.com/@ElwinStudios"
+            />
+            <Icon
+              name="instagram"
+              size="64"
+              href="https://www.instagram.com/agentsoftheundergroundrailroad/"
+            />
+            <Icon
+              name="facebook"
+              size="64"
+              href="https://www.facebook.com/people/Agents-of-the-Underground-Railroad/100091754644195/"
+            />
+            <Icon
+              name="email"
+              size="64"
+              href="mailto: info@agentsoftheundergroundrailroad.com"
+            />
+          </div>
+        </p>
+      </div>
+      <Instagram client:idle token={import.meta.env.INSTAGRAM_TOKEN} />
     </div>
-    <script is:inline>
-      // This function retrieves a new token and updates the environment variable
-      function refreshInstagramToken() {
-        axios
-          .get(
-            `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${process.env.INSTAGRAM_TOKEN}`
-          )
-          .then((response) => {
-            import.meta.env.INSTAGRAM_TOKEN = response.data.access_token;
-            console.log(response.data.access_token);
-          });
-      }
-
-      // Schedule the token refresh task to run every 59 days
-      schedule("0 0 */59 * * *", refreshInstagramToken);
-    </script>
-    <Instagram client:idle token={import.meta.env.INSTAGRAM_TOKEN} />
   </section>
   <footer class="flex justify-center bg-white p-8">
     <a

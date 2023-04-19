@@ -1,7 +1,6 @@
 ---
 export interface Props {
     id: string;
-    img?: string;
     name: string;
     title: string;
 }
@@ -18,12 +17,12 @@ const input = {
 };
 
 const output = {
-    jessica: "peer-checked/jessica:[&_label]:bg-gradient-to-tr",
-    joshua: "peer-checked/joshua:[&_label]:bg-gradient-to-tr",
-    jocelyn: "peer-checked/jocelyn:[&_label]:bg-gradient-to-tr",
-    joseph: "peer-checked/joseph:[&_label]:bg-gradient-to-tr",
-    john: "peer-checked/john:[&_label]:bg-gradient-to-tr",
-    jeremy: "peer-checked/jeremy:[&_label]:bg-gradient-to-tr",
+    jessica: "peer-checked/jessica:[&_label]:p-1.5",
+    joshua: "peer-checked/joshua:[&_label]:p-1.5",
+    jocelyn: "peer-checked/jocelyn:[&_label]:p-1.5",
+    joseph: "peer-checked/joseph:[&_label]:p-1.5",
+    john: "peer-checked/john:[&_label]:p-1.5",
+    jeremy: "peer-checked/jeremy:[&_label]:p-1.5",
 };
 ---
 
@@ -39,18 +38,14 @@ const output = {
     class={"lg:flex hidden flex-col justify-start gap-2 flex-1 col-span-1 label " +
         output[id]}
 >
-    <!-- <div
-        class="bg-neutral-500 min-w-32 aspect-square rounded-full cursor-pointer scale-100 hover:scale-105 transition-all duration-500"
-    >
-    </div> -->
-
     <label
         for={id}
-        class="min-w-32 aspect-square rounded-full cursor-pointer scale-100 hover:scale-105 transition-all duration-500 p-1 from-[#F8D543] to-[#EA8825]"
+        class="min-w-32 aspect-square rounded-full cursor-pointer scale-100 hover:scale-105 transition-all duration-500 p-0 bg-gradient-to-tr from-[#F8D543] to-[#EA8825]"
     >
         <div
-            class="bg-neutral-500 aspect-square rounded-full h-full w-full border-4 border-white"
+            class="aspect-square rounded-full h-full w-full border-4 border-white overflow-hidden flex justify-center items-start"
         >
+            <img class="min-w-[135%]" src={`/${id}.webp`} alt="" />
         </div>
     </label>
     <div>

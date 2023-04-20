@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Character from "../components/Character.astro";
-import Icon from "../components/Icon.astro";
+import Icon from "../components/Icon";
 import Location from "../components/Location.astro";
 import Profile from "../components/Profile.astro";
 import Team from "../components/Team.astro";
 import Instagram from "../components/Instagram";
 import Hero from "../sections/Hero";
+import Locations from "../components/Locations";
 ---
 
 <Layout
@@ -103,7 +104,7 @@ import Hero from "../sections/Hero";
       class="mx-auto flex w-full max-w-screen-2xl flex-col gap-16 p-16 max-sm:p-6 lg:p-24"
     >
       <div class="flex flex-col gap-4 lg:gap-8">
-        <h1 class="font-display text-white">Agents</h1>
+        <h2 class="font-display text-white">Agents</h2>
         <div
           class="-mx-16 flex snap-x snap-mandatory grid-cols-5 gap-4 px-16 no-scrollbar max-md:overflow-auto max-sm:-mx-6 max-sm:px-6 md:mx-0 md:grid md:px-0 lg:gap-8"
         >
@@ -126,11 +127,8 @@ import Hero from "../sections/Hero";
         </div>
       </div>
       <div class="flex flex-col">
-        <h1 class="font-display text-white">Locations</h1>
-        <div
-          id="locations"
-          class="-mx-16 flex snap-x snap-mandatory gap-4 overflow-auto px-16 no-scrollbar max-sm:-mx-6 max-sm:px-6 lg:-mx-24 lg:gap-8 lg:px-24 pt-4 lg:pt-8"
-        >
+        <h2 class="font-display text-white">Locations</h2>
+        <Locations client:idle>
           <Location id="Delaware" name={"Delaware"} img="/Delaware.webp" />
           <Location id="Georgia" name={"Georgia"} img="/Georgia.webp" />
           <Location id="Illinois" name={"Illinois"} img="/Illinois.webp" />
@@ -168,7 +166,7 @@ import Hero from "../sections/Hero";
             name={"West Virginia"}
             img="/West_Virginia.webp"
           />
-        </div>
+        </Locations>
       </div>
     </section>
   </main>
@@ -176,7 +174,7 @@ import Hero from "../sections/Hero";
     <div
       class="mx-auto flex w-full max-w-screen-2xl flex-col gap-8 bg-white p-16 max-sm:p-6 lg:p-24"
     >
-      <h1 class="font-display">Meet Our Team</h1>
+      <h2 class="font-display">Meet Our Team</h2>
       <p class="-mt-4 max-w-[75ch] xl:text-lg">
         At Elwin Studios, we create educational content that is fun, factual,
         and inspiring. We are a team so tight, it’s like we're family…wait, we
@@ -185,7 +183,7 @@ import Hero from "../sections/Hero";
         never-seen-before documentary series on the heroes and heroines of the
         Underground Railroad.
       </p>
-      <fieldset class="grid grid-cols-6 gap-x-4 gap-y-12">
+      <fieldset class="grid grid-cols-6 gap-x-8 gap-y-12">
         <Team
           id="jessica"
           title="Production Coordinator | Researcher"
@@ -246,7 +244,7 @@ import Hero from "../sections/Hero";
   >
     <div class="flex min-w-[144px] max-w-[75ch] flex-col gap-6">
       <div>
-        <h1 class="font-display text-white">About Our Trip</h1>
+        <h2 class="font-display text-white">About Our Trip</h2>
         <p class="font-[gilroy-regular] text-2xl text-white">
           June - August 2023
         </p>
@@ -285,7 +283,7 @@ import Hero from "../sections/Hero";
       class="flex max-lg:flex-col aspect-video items-center justify-center gap-8 p-16 max-md:flex-col lg:gap-16 lg:p-24 max-w-screen-2xl mx-auto"
     >
       <div class="flex max-w-[65ch] flex-col gap-4">
-        <h1 class="font-display">Join Us on Social Media!</h1>
+        <h2 class="font-display">Join Us on Social Media!</h2>
         <p class="text-xl">
           Follow us on YouTube, Instagram, and Facebook for special updates on
           the making of Agents of the Underground Railroad.
